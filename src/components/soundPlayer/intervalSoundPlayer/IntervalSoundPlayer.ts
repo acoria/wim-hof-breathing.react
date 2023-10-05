@@ -3,15 +3,21 @@ import { IIntervalSoundPlayer } from "./IIntervalSoundPlayer";
 
 export class IntervalSoundPlayer implements IIntervalSoundPlayer {
   private soundPlayer: SoundPlayer;
-  // private intervalId?: NodeJS.Timeout;
   private playInLoop = false;
+  private intervalsLeftBeforeTermination?: number;
 
   constructor(filePath: string, private intervalInMillis: number) {
     this.soundPlayer = new SoundPlayer(filePath);
   }
 
   private playSoundLoop() {
+    if (this.intervalsLeftBeforeTermination === 0) {
+      return;
+    }
     this.soundPlayer.play();
+    if (this.intervalsLeftBeforeTermination) {
+      this.intervalsLeftBeforeTermination--;
+    }
 
     setTimeout(() => {
       if (this.playInLoop) {
@@ -20,8 +26,9 @@ export class IntervalSoundPlayer implements IIntervalSoundPlayer {
     }, this.intervalInMillis);
   }
 
-  play(): void {
+  play(terminateAfterIntervals?: number): void {
     this.playInLoop = true;
+    this.intervalsLeftBeforeTermination = terminateAfterIntervals;
     this.playSoundLoop();
   }
   stop(): void {
