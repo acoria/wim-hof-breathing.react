@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { IntervalSoundPlayer } from "./components/soundPlayer/intervalSoundPlayer/IntervalSoundPlayer";
 
 export const IntervalSounds: React.FC = () => {
+  const interval = 4000;
   const [playSound, setPlaySound] = useState(false);
 
   useEffect(() => {
@@ -9,7 +10,7 @@ export const IntervalSounds: React.FC = () => {
       highSoundIntervalPlayer.play();
       setTimeout(() => {
         lowSoundIntervalPlayer.play();
-      }, 1000);
+      }, interval / 2);
     } else {
       highSoundIntervalPlayer.stop();
       lowSoundIntervalPlayer.stop();
@@ -17,12 +18,12 @@ export const IntervalSounds: React.FC = () => {
   }, [playSound]);
 
   const lowSoundIntervalPlayer = useMemo(
-    () => new IntervalSoundPlayer("./assets/sounds/low_pop.mp3", 2000),
+    () => new IntervalSoundPlayer("./assets/sounds/low_pop.mp3", interval),
     []
   );
 
   const highSoundIntervalPlayer = useMemo(
-    () => new IntervalSoundPlayer("./assets/sounds/high_pop.mp3", 2000),
+    () => new IntervalSoundPlayer("./assets/sounds/high_pop.mp3", interval),
     []
   );
 
@@ -32,7 +33,7 @@ export const IntervalSounds: React.FC = () => {
         setPlaySound((previous) => !previous);
       }}
     >
-      Listen to me
+      {playSound ? "Stop" : "Play"}
     </button>
   );
 };
