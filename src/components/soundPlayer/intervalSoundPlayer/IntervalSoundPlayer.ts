@@ -1,4 +1,4 @@
-import { SoundPlayer } from "../SoundPlayer";
+import { SoundPlayer } from "../soundPlayer/SoundPlayer";
 import { IIntervalSoundPlayer } from "./IIntervalSoundPlayer";
 
 export class IntervalSoundPlayer implements IIntervalSoundPlayer {
@@ -12,11 +12,16 @@ export class IntervalSoundPlayer implements IIntervalSoundPlayer {
 
   private playSoundLoop() {
     if (this.intervalsLeftBeforeTermination === 0) {
+      this.soundPlayer.stop();
       return;
     }
     this.soundPlayer.play();
     if (this.intervalsLeftBeforeTermination) {
       this.intervalsLeftBeforeTermination--;
+      if (this.intervalsLeftBeforeTermination === 0) {
+        this.soundPlayer.stop();
+        return;
+      }
     }
 
     setTimeout(() => {
@@ -31,6 +36,11 @@ export class IntervalSoundPlayer implements IIntervalSoundPlayer {
     this.intervalsLeftBeforeTermination = terminateAfterIntervals;
     this.playSoundLoop();
   }
+
+  registerOnStop(listener: () => void): void {
+    this.soundPlayer.registerOnStop(listener);
+  }
+
   stop(): void {
     this.soundPlayer.stop();
     this.playInLoop = false;

@@ -5,9 +5,11 @@ export const IntervalSounds: React.FC = () => {
   const interval = 2000;
   const numberOfRuns = 4;
   const [playSound, setPlaySound] = useState(false);
+  const [playerStopped, setPlayerStopped] = useState(true);
 
   useEffect(() => {
     if (playSound) {
+      setPlayerStopped(false);
       highSoundIntervalPlayer.play(numberOfRuns - 2);
       setTimeout(() => {
         lowSoundIntervalPlayer.play(numberOfRuns);
@@ -22,10 +24,14 @@ export const IntervalSounds: React.FC = () => {
     }
   }, [playSound]);
 
-  const lowSoundIntervalPlayer = useMemo(
-    () => new IntervalSoundPlayer("./assets/sounds/low_pop.mp3", interval),
-    []
-  );
+  const lowSoundIntervalPlayer = useMemo(() => {
+    const intervalSoundPlayer = new IntervalSoundPlayer(
+      "./assets/sounds/low_pop.mp3",
+      interval
+    );
+    intervalSoundPlayer.registerOnStop(() => setPlayerStopped(true));
+    return intervalSoundPlayer;
+  }, []);
 
   const highSoundIntervalPlayer = useMemo(
     () => new IntervalSoundPlayer("./assets/sounds/high_pop.mp3", interval),
@@ -43,7 +49,7 @@ export const IntervalSounds: React.FC = () => {
         setPlaySound((previous) => !previous);
       }}
     >
-      {playSound ? "Stop" : "Play"}
+      {playerStopped ? "Play" : "Stop"}
     </button>
   );
 };

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { SoundPlayer } from "./components/soundPlayer/SoundPlayer";
+import { SoundPlayer } from "./components/soundPlayer/soundPlayer/SoundPlayer";
 import { IntervalSoundPlayer } from "./components/soundPlayer/intervalSoundPlayer/IntervalSoundPlayer";
 import { IntervalSounds } from "./IntervalSounds";
 
