@@ -11,6 +11,9 @@ export class IntervalSoundPlayer implements IIntervalSoundPlayer {
   }
 
   private playSoundLoop() {
+    if (!this.playInLoop) {
+      return;
+    }
     if (this.intervalsLeftBeforeTermination === 0) {
       this.soundPlayer.stop();
       return;

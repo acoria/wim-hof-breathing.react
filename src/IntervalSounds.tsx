@@ -5,22 +5,31 @@ export const IntervalSounds: React.FC = () => {
   const interval = 2000;
   const numberOfRuns = 4;
   const [playSound, setPlaySound] = useState(false);
-  const [playerStopped, setPlayerStopped] = useState(true);
+  const [playerRunning, setPlayerRunning] = useState(false);
+  const [timeoutIds, setTimeoutIds] = useState<NodeJS.Timeout[]>([]);
 
   useEffect(() => {
     if (playSound) {
-      setPlayerStopped(false);
+      const timeoutIds = [];
+      setPlayerRunning(true);
       highSoundIntervalPlayer.play(numberOfRuns - 2);
-      setTimeout(() => {
-        lowSoundIntervalPlayer.play(numberOfRuns);
-      }, interval / 2);
+      timeoutIds.push(
+        setTimeout(() => {
+          lowSoundIntervalPlayer.play(numberOfRuns);
+        }, interval / 2)
+      );
       //set finishing timer to start 2 runs before the end
-      setTimeout(() => {
-        gongSoundIntervalPlayer.play(2);
-      }, numberOfRuns * interval - interval * 2);
+      timeoutIds.push(
+        setTimeout(() => {
+          gongSoundIntervalPlayer.play(2);
+        }, numberOfRuns * interval - interval * 2)
+      );
+      setTimeoutIds(timeoutIds);
     } else {
+      timeoutIds.forEach((timeoutId) => clearTimeout(timeoutId));
       highSoundIntervalPlayer.stop();
       lowSoundIntervalPlayer.stop();
+      gongSoundIntervalPlayer.stop();
     }
   }, [playSound]);
 
@@ -29,7 +38,7 @@ export const IntervalSounds: React.FC = () => {
       "./assets/sounds/low_pop.mp3",
       interval
     );
-    intervalSoundPlayer.registerOnStop(() => setPlayerStopped(true));
+    intervalSoundPlayer.registerOnStop(() => setPlayerRunning(false));
     return intervalSoundPlayer;
   }, []);
 
@@ -49,7 +58,7 @@ export const IntervalSounds: React.FC = () => {
         setPlaySound((previous) => !previous);
       }}
     >
-      {playerStopped ? "Play" : "Stop"}
+      {playerRunning ? "Stop" : "Play"}
     </button>
   );
 };
