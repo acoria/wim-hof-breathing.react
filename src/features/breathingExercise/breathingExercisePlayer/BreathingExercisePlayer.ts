@@ -8,9 +8,9 @@ export class BreathingExercisePlayer
   implements IBreathingExercisePlayer
 {
   private numberOfFinishBreaths = 3;
-  private lowSoundIntervalPlayer: IIntervalSoundPlayer;
-  private highSoundIntervalPlayer: IIntervalSoundPlayer;
-  private finishSoundIntervalPlayer: IIntervalSoundPlayer;
+  private breathInSoundPlayer: IIntervalSoundPlayer;
+  private breathOutSoundPlayer: IIntervalSoundPlayer;
+  private finishingBreathsSoundPlayer: IIntervalSoundPlayer;
   private timeoutIds: NodeJS.Timeout[] = [];
 
   constructor(
@@ -18,16 +18,16 @@ export class BreathingExercisePlayer
     private numberOfRuns: number
   ) {
     super();
-    this.lowSoundIntervalPlayer = this.createSoundIntervalPlayer(
+    this.breathInSoundPlayer = this.createSoundIntervalPlayer(
       "./assets/sounds/low_pop.mp3"
     );
-    this.lowSoundIntervalPlayer.onStop(() => super.stop());
-    this.highSoundIntervalPlayer = this.createSoundIntervalPlayer(
+    this.breathOutSoundPlayer = this.createSoundIntervalPlayer(
       "./assets/sounds/high_pop.mp3"
     );
-    this.finishSoundIntervalPlayer = this.createSoundIntervalPlayer(
+    this.finishingBreathsSoundPlayer = this.createSoundIntervalPlayer(
       "./assets/sounds/bottle_pop.mp3"
     );
+    this.finishingBreathsSoundPlayer.onStop(() => super.stop());
   }
 
   private createSoundIntervalPlayer(filePath: string): IIntervalSoundPlayer {
@@ -35,11 +35,11 @@ export class BreathingExercisePlayer
   }
 
   /**
-   *  Sets a timer for playing the high breathing sounds
+   * Sets a timer for playing the high breathing sounds
    * It only plays until the finishing sound starts playing
    */
-  private setupHighSoundIntervalPlayer() {
-    this.highSoundIntervalPlayer.start(
+  private setupBreathOutSoundIntervalPlayer() {
+    this.breathOutSoundPlayer.start(
       this.numberOfRuns - this.numberOfFinishBreaths
     );
   }
@@ -48,9 +48,9 @@ export class BreathingExercisePlayer
    * Set a timer for playing the low breathing sounds.
    * It starts after half the breathingDurationInMillis.
    */
-  private setupLowSoundIntervalPlayer(): NodeJS.Timeout {
+  private setupBreathInIntervalPlayer(): NodeJS.Timeout {
     return setTimeout(() => {
-      this.lowSoundIntervalPlayer.start(this.numberOfRuns);
+      this.breathInSoundPlayer.start(this.numberOfRuns);
     }, this.breathDurationInMillis / 2);
   }
 
@@ -58,23 +58,23 @@ export class BreathingExercisePlayer
    * Sets a timer for playing the finishing breath sound.
    * It starts after the entire time minus the finishing breaths duration
    */
-  private setupFinishingSoundIntervalPlayer(): NodeJS.Timeout {
+  private setupFinishingBreathSoundIntervalPlayer(): NodeJS.Timeout {
     return setTimeout(() => {
-      this.finishSoundIntervalPlayer.start(this.numberOfFinishBreaths);
+      this.finishingBreathsSoundPlayer.start(this.numberOfFinishBreaths);
     }, this.numberOfRuns * this.breathDurationInMillis - this.breathDurationInMillis * this.numberOfFinishBreaths);
   }
 
   private stopAllPlayers() {
-    this.highSoundIntervalPlayer.stop();
-    this.lowSoundIntervalPlayer.stop();
-    this.finishSoundIntervalPlayer.stop();
+    this.breathOutSoundPlayer.stop();
+    this.breathInSoundPlayer.stop();
+    this.finishingBreathsSoundPlayer.stop();
   }
 
   start() {
     super.start();
-    this.setupHighSoundIntervalPlayer();
-    this.timeoutIds.push(this.setupLowSoundIntervalPlayer());
-    this.timeoutIds.push(this.setupFinishingSoundIntervalPlayer());
+    this.setupBreathOutSoundIntervalPlayer();
+    this.timeoutIds.push(this.setupBreathInIntervalPlayer());
+    this.timeoutIds.push(this.setupFinishingBreathSoundIntervalPlayer());
   }
 
   stop() {

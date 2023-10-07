@@ -10,22 +10,27 @@ export class IntervalSoundPlayer implements IIntervalSoundPlayer {
     this.soundPlayer = new SoundPlayer(filePath);
   }
 
-  private checkForIntervalTermination() {
+  private terminateIntervalIfEndReached(): boolean {
     if (this.intervalsLeftBeforeTermination === 0) {
       this.soundPlayer.stop();
-      return;
+      return true;
     }
+    return false;
   }
 
   private playSoundLoop() {
     if (!this.playInLoop) {
       return;
     }
-    this.checkForIntervalTermination();
+    if (this.terminateIntervalIfEndReached()) {
+      return;
+    }
     this.soundPlayer.start();
     if (this.intervalsLeftBeforeTermination) {
       this.intervalsLeftBeforeTermination--;
-      this.checkForIntervalTermination();
+      if (this.terminateIntervalIfEndReached()) {
+        return;
+      }
     }
 
     setTimeout(() => {
