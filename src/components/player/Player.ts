@@ -17,8 +17,6 @@ export class Player implements IPlayer {
   }
 
   stop(): void {
-    this.onStopHandlers.forEach((handler) => {
-      handler();
-    });
+    this.onStopHandlers.forEach((handler) => handler());
   }
 }

@@ -1,13 +1,16 @@
 import { useMemo, useState } from "react";
 import { BreathingExercisePlayer } from "../breathingExercisePlayer/BreathingExercisePlayer";
+import { IUseBreathingExercisePlayer } from "./IUseBreathingExercisePlayer";
+import { IBreathingExercisePlayer } from "../breathingExercisePlayer/IBreathingExercisePlayer";
 
 export const useBreathingExercisePlayer = (
   breathDurationInMillis: number,
   numberOfRuns: number
-) => {
+): IUseBreathingExercisePlayer => {
   const [isRunning, setIsRunning] = useState(false);
+
   const breathingExercisePlayer = useMemo(() => {
-    const player = new BreathingExercisePlayer(
+    const player: IBreathingExercisePlayer = new BreathingExercisePlayer(
       breathDurationInMillis,
       numberOfRuns
     );
@@ -16,9 +19,17 @@ export const useBreathingExercisePlayer = (
     return player;
   }, [breathDurationInMillis, numberOfRuns]);
 
+  const start = () => {
+    breathingExercisePlayer.start();
+  };
+
+  const stop = () => {
+    breathingExercisePlayer.stop();
+  };
+
   return {
-    start: breathingExercisePlayer.start,
-    stop: breathingExercisePlayer.stop,
+    start,
+    stop,
     isRunning,
   };
 };
