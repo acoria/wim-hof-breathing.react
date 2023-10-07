@@ -1,0 +1,15 @@
+.playIcon {
+  position: relative;
+  width: 12rem;
+  color: blue;
+}
+
+.circle {
+}
+
+.triangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12rem;
+}
