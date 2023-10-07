@@ -15,6 +15,7 @@ export const PlayerButton: React.FC<IPlayerButtonProps> = (props) => {
             props.onPlay();
           }
         }}
+        className={styles.icon}
       />
     </div>
   );
