@@ -5,6 +5,7 @@ export class IntervalSoundPlayer implements IIntervalSoundPlayer {
   private soundPlayer: SoundPlayer;
   private playInLoop = false;
   private intervalsLeftBeforeTermination?: number;
+  private newIntervalHandlers: ((intervalCount: number) => void)[] = [];
 
   constructor(filePath: string, private intervalInMillis: number) {
     this.soundPlayer = new SoundPlayer(filePath);
@@ -38,6 +39,10 @@ export class IntervalSoundPlayer implements IIntervalSoundPlayer {
         this.playSoundLoop();
       }
     }, this.intervalInMillis);
+  }
+
+  onNewInterval(handler: (intervalCount: number) => void): void {
+    this.newIntervalHandlers.push(handler);
   }
 
   start(terminateAfterIntervals?: number): void {

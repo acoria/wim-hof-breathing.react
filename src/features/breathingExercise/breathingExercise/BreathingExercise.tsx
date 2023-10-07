@@ -1,19 +1,18 @@
-import { PlayerButton } from "../../playerButton/PlayerButton";
+import { PlayerButton } from "../../playCircle/PlayCircle";
 import { IBreathingExerciseProps } from "./IBreathingExerciseProps";
 import { useBreathingExercisePlayer } from "./useBreathingExercisePlayer";
-import { ReactComponent as Square } from "../../../assets/images/square.svg";
-import styles from "./BreathingExercise.module.css";
-import testStyle from "../../playerButton/PlayerButton.module.css";
-import { PlayIcon } from "../../../components/icons/playIcon/PlayIcon";
 
 export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
-  const { start, stop, isRunning } = useBreathingExercisePlayer(
+  const { start, stop, isRunning, breathCount } = useBreathingExercisePlayer(
     props.breathDurationInMillis,
-    props.numberOfRuns
+    props.numberOfRuns,
+    props.startDelayInMillis
   );
 
   return (
     <>
+      {/* {isRunning && <h1 style={{ color: "white" }}>Hello? anyone there?</h1>} */}
+      <h1 style={{ color: "white" }}>{breathCount}</h1>
       <PlayerButton isPlaying={isRunning} onPlay={start} onStop={stop} />
     </>
   );

@@ -1,0 +1,33 @@
+.playCircle {
+  position: absolute;
+  width: 100%;
+  bottom: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: var(--primary);
+  color: var(--secondary);
+}
+
+.playIcon {
+  width: 12rem;
+  cursor: pointer;
+}
+
+.animateCircle {
+  transform: translateY(-100%);
+  transition: transform 1s;
+  animation: pulsingCircle 3.2s infinite 1s;
+}
+
+@keyframes pulsingCircle {
+  0% {
+    transform: translateY(-100%) scale(100%);
+  }
+  50% {
+    transform: translateY(-100%) scale(130%);
+  }
+  100% {
+    transform: translateY(-100%) scale(100%);
+  }
+}

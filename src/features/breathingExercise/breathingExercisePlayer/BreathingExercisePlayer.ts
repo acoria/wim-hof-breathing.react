@@ -8,20 +8,24 @@ export class BreathingExercisePlayer
   implements IBreathingExercisePlayer
 {
   private numberOfFinishBreaths = 3;
-  private breathInSoundPlayer: IIntervalSoundPlayer;
   private breathOutSoundPlayer: IIntervalSoundPlayer;
+  private breathInSoundPlayer: IIntervalSoundPlayer;
   private finishingBreathsSoundPlayer: IIntervalSoundPlayer;
   private timeoutIds: NodeJS.Timeout[] = [];
+  private newBreathHandlers: ((breathCount: number) => void)[] = [];
+  private exerciseRunning = false;
+  private breathCount = 0;
 
   constructor(
     private breathDurationInMillis: number,
-    private numberOfRuns: number
+    private numberOfRuns: number,
+    private startDelayInMillis: number = 0
   ) {
     super();
-    this.breathInSoundPlayer = this.createSoundIntervalPlayer(
+    this.breathOutSoundPlayer = this.createSoundIntervalPlayer(
       "./assets/sounds/low_pop.mp3"
     );
-    this.breathOutSoundPlayer = this.createSoundIntervalPlayer(
+    this.breathInSoundPlayer = this.createSoundIntervalPlayer(
       "./assets/sounds/high_pop.mp3"
     );
     this.finishingBreathsSoundPlayer = this.createSoundIntervalPlayer(
@@ -38,8 +42,8 @@ export class BreathingExercisePlayer
    * Sets a timer for playing the high breathing sounds
    * It only plays until the finishing sound starts playing
    */
-  private setupBreathOutSoundIntervalPlayer() {
-    this.breathOutSoundPlayer.start(
+  private setupBreathInSoundIntervalPlayer() {
+    this.breathInSoundPlayer.start(
       this.numberOfRuns - this.numberOfFinishBreaths
     );
   }
@@ -48,9 +52,9 @@ export class BreathingExercisePlayer
    * Set a timer for playing the low breathing sounds.
    * It starts after half the breathingDurationInMillis.
    */
-  private setupBreathInIntervalPlayer(): NodeJS.Timeout {
+  private setupBreathOutIntervalPlayer(): NodeJS.Timeout {
     return setTimeout(() => {
-      this.breathInSoundPlayer.start(this.numberOfRuns);
+      this.breathOutSoundPlayer.start(this.numberOfRuns);
     }, this.breathDurationInMillis / 2);
   }
 
@@ -64,21 +68,41 @@ export class BreathingExercisePlayer
     }, this.numberOfRuns * this.breathDurationInMillis - this.breathDurationInMillis * this.numberOfFinishBreaths);
   }
 
-  private stopAllPlayers() {
-    this.breathOutSoundPlayer.stop();
+  private informAboutNewBreath() {
+    this.breathCount++;
+    this.newBreathHandlers.forEach((handler) => handler(this.breathCount));
+    setTimeout(() => {
+      if (this.exerciseRunning) {
+        this.informAboutNewBreath();
+      }
+    }, this.breathDurationInMillis);
+  }
+
+  private stopAll() {
+    this.exerciseRunning = false;
     this.breathInSoundPlayer.stop();
+    this.breathOutSoundPlayer.stop();
     this.finishingBreathsSoundPlayer.stop();
   }
 
+  onNewBreath(handler: (breathCount: number) => void): void {
+    this.newBreathHandlers.push(handler);
+  }
+
   start() {
-    super.start();
-    this.setupBreathOutSoundIntervalPlayer();
-    this.timeoutIds.push(this.setupBreathInIntervalPlayer());
-    this.timeoutIds.push(this.setupFinishingBreathSoundIntervalPlayer());
+    setTimeout(() => {
+      super.start();
+      this.exerciseRunning = true;
+      this.breathCount = 0;
+      this.informAboutNewBreath();
+      this.setupBreathInSoundIntervalPlayer();
+      this.timeoutIds.push(this.setupBreathOutIntervalPlayer());
+      this.timeoutIds.push(this.setupFinishingBreathSoundIntervalPlayer());
+    }, this.startDelayInMillis);
   }
 
   stop() {
     this.timeoutIds.forEach((timeoutId) => clearTimeout(timeoutId));
-    this.stopAllPlayers();
+    this.stopAll();
   }
 }

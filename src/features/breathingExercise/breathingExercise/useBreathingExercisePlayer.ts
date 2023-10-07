@@ -5,17 +5,21 @@ import { IBreathingExercisePlayer } from "../breathingExercisePlayer/IBreathingE
 
 export const useBreathingExercisePlayer = (
   breathDurationInMillis: number,
-  numberOfRuns: number
+  numberOfRuns: number,
+  startDelayInMillis: number = 0
 ): IUseBreathingExercisePlayer => {
   const [isRunning, setIsRunning] = useState(false);
+  const [breathCount, setBreathCount] = useState(0);
 
   const breathingExercisePlayer = useMemo(() => {
     const player: IBreathingExercisePlayer = new BreathingExercisePlayer(
       breathDurationInMillis,
-      numberOfRuns
+      numberOfRuns,
+      startDelayInMillis
     );
     player.onStart(() => setIsRunning(true));
     player.onStop(() => setIsRunning(false));
+    player.onNewBreath((breathCount) => setBreathCount(breathCount));
     return player;
   }, [breathDurationInMillis, numberOfRuns]);
 
@@ -31,5 +35,6 @@ export const useBreathingExercisePlayer = (
     start,
     stop,
     isRunning,
+    breathCount,
   };
 };
