@@ -69,6 +69,10 @@ export class BreathingExercisePlayer
   }
 
   private informAboutNewBreath() {
+    if (!this.exerciseRunning) {
+      return;
+    }
+
     this.breathCount++;
     this.newBreathHandlers.forEach((handler) => handler(this.breathCount));
     setTimeout(() => {
