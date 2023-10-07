@@ -10,9 +10,9 @@
 .icon {
   font-size: 15rem;
   cursor: pointer;
-  color: #c7e4ef;
+  color: var(--primary);
 }
 
 .icon:hover {
-  color: #42a2bf;
+  color: var(--secondary);
 }
