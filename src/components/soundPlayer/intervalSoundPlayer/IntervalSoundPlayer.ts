@@ -10,21 +10,22 @@ export class IntervalSoundPlayer implements IIntervalSoundPlayer {
     this.soundPlayer = new SoundPlayer(filePath);
   }
 
-  private playSoundLoop() {
-    if (!this.playInLoop) {
-      return;
-    }
+  private checkForIntervalTermination() {
     if (this.intervalsLeftBeforeTermination === 0) {
       this.soundPlayer.stop();
       return;
     }
-    this.soundPlayer.play();
+  }
+
+  private playSoundLoop() {
+    if (!this.playInLoop) {
+      return;
+    }
+    this.checkForIntervalTermination();
+    this.soundPlayer.start();
     if (this.intervalsLeftBeforeTermination) {
       this.intervalsLeftBeforeTermination--;
-      if (this.intervalsLeftBeforeTermination === 0) {
-        this.soundPlayer.stop();
-        return;
-      }
+      this.checkForIntervalTermination();
     }
 
     setTimeout(() => {
@@ -34,14 +35,18 @@ export class IntervalSoundPlayer implements IIntervalSoundPlayer {
     }, this.intervalInMillis);
   }
 
-  play(terminateAfterIntervals?: number): void {
+  start(terminateAfterIntervals?: number): void {
     this.playInLoop = true;
     this.intervalsLeftBeforeTermination = terminateAfterIntervals;
     this.playSoundLoop();
   }
 
-  registerOnStop(listener: () => void): void {
-    this.soundPlayer.registerOnStop(listener);
+  onStart(handler: () => void): void {
+    this.soundPlayer.onStop(handler);
+  }
+
+  onStop(handler: () => void): void {
+    this.soundPlayer.onStop(handler);
   }
 
   stop(): void {

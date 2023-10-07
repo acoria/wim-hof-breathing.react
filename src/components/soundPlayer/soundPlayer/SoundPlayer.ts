@@ -1,29 +1,25 @@
+import { Player } from "../../player/Player";
 import { ISoundPlayer } from "./ISoundPlayer";
 import { Howl } from "howler";
 
 /**
  * filePath needs to be in public folder
  */
-export class SoundPlayer implements ISoundPlayer {
+export class SoundPlayer extends Player implements ISoundPlayer {
   private sound: Howl;
-  private onStopListeners: (() => void)[] = [];
 
   constructor(filePath: string) {
+    super();
     this.sound = new Howl({ src: filePath, html5: true });
   }
 
-  play() {
+  start() {
     this.sound.play();
-  }
-
-  registerOnStop(listener: () => void): void {
-    this.onStopListeners.push(listener);
+    super.start();
   }
 
   stop(): void {
     this.sound.stop();
-    this.onStopListeners.forEach((listener) => {
-      listener();
-    });
+    super.stop();
   }
 }

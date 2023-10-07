@@ -1,4 +1,4 @@
-import { BreathingExercise } from "./features/breathingExercise/BreathingExercise";
+import { BreathingExercise } from "./features/breathingExercise/breathingExercise/BreathingExercise";
 
 export const App = () => {
   return <BreathingExercise breathDurationInMillis={1000} numberOfRuns={5} />;

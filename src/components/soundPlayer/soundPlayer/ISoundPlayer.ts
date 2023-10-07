@@ -1,5 +1,3 @@
-export interface ISoundPlayer {
-  play(): void;
-  registerOnStop(listener: () => void): void;
-  stop(): void;
-}
+import { IPlayer } from "../../player/IPlayer";
+
+export interface ISoundPlayer extends IPlayer {}

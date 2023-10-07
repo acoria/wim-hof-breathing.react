@@ -1,5 +1,5 @@
 export interface IPlayerButtonProps {
-  isPlayerRunning: boolean;
+  isPlaying: boolean;
   onPlay: () => void;
   onStop: ()=>void;
 }
