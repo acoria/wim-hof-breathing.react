@@ -9,6 +9,7 @@ export const PlayIcon: React.FC<IPlayIconProps> = (props) => {
     <div
       className={`${styles.playIcon} ${props.className}`}
       onClick={props.onClick}
+      style={{ width: props.width }}
     >
       <Circle className={`${styles.circle}`}></Circle>
       {props.isPlaying && !props.hideState && (

@@ -3,4 +3,5 @@ export interface IPlayIconProps {
   hideState?: boolean;
   isPlaying?: boolean;
   onClick?: () => void;
+  width: string;
 }

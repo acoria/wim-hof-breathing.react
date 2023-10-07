@@ -1,7 +1,4 @@
 .playCircle {
-  position: absolute;
-  width: 100%;
-  bottom: 10%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -10,7 +7,6 @@
 }
 
 .playIcon {
-  width: 12rem;
   cursor: pointer;
 }
 
