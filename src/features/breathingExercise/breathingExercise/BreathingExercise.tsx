@@ -14,13 +14,6 @@ export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
 
   return (
     <>
-      <PlayIcon />
-      <div
-        className={testStyle.playerButton}
-        style={{ position: "absolute", top: "-4rem" }}
-      >
-        {/* <Square className={styles.circle} /> */}
-      </div>
       <PlayerButton isPlaying={isRunning} onPlay={start} onStop={stop} />
     </>
   );

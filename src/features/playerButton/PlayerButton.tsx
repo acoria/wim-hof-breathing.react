@@ -1,13 +1,13 @@
-import { Icon } from "../../components/icons/Icon";
-import { IconType } from "../../components/icons/IconType";
+import { PlayIcon } from "../../components/icons/playIcon/PlayIcon";
 import { IPlayerButtonProps } from "./IPlayerButtonProps";
 import styles from "./PlayerButton.module.css";
 
 export const PlayerButton: React.FC<IPlayerButtonProps> = (props) => {
   return (
     <div className={styles.playerButton}>
-      <Icon
-        iconType={props.isPlaying ? IconType.STOP : IconType.PLAY}
+      <PlayIcon
+        className={styles.playIcon}
+        isPlaying={props.isPlaying}
         onClick={() => {
           if (props.isPlaying) {
             props.onStop();
@@ -15,7 +15,6 @@ export const PlayerButton: React.FC<IPlayerButtonProps> = (props) => {
             props.onPlay();
           }
         }}
-        className={styles.icon}
       />
     </div>
   );

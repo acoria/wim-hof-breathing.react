@@ -7,12 +7,12 @@
   justify-content: center;
 }
 
-.icon {
-  font-size: 15rem;
+.playIcon {
+  width: 12rem;
   cursor: pointer;
   color: var(--primary);
 }
 
-.icon:hover {
+.playIcon:hover {
   color: var(--secondary);
 }
