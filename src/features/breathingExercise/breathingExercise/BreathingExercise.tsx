@@ -18,6 +18,9 @@ export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
 
   return (
     <>
+      <div className={styles.title}>
+        <h1>Wim Hof Breathing</h1>
+      </div>
       {isBreathing && <h1 className={styles.breathCounter}>{breathCount}</h1>}
       <BreathingCircle
         isBreathing={isBreathing}
