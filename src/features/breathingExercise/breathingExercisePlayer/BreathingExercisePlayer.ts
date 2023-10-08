@@ -22,11 +22,11 @@ export class BreathingExercisePlayer
     private startDelayInMillis: number = 0
   ) {
     super();
-    this.breathOutSoundPlayer = this.createSoundIntervalPlayer(
-      "./assets/sounds/low_pop.mp3"
-    );
     this.breathInSoundPlayer = this.createSoundIntervalPlayer(
       "./assets/sounds/high_pop.mp3"
+    );
+    this.breathOutSoundPlayer = this.createSoundIntervalPlayer(
+      "./assets/sounds/low_pop.mp3"
     );
     this.finishingBreathsSoundPlayer = this.createSoundIntervalPlayer(
       "./assets/sounds/bottle_pop.mp3"
@@ -63,15 +63,18 @@ export class BreathingExercisePlayer
    * It starts after the entire time minus the finishing breaths duration
    */
   private setupFinishingBreathSoundIntervalPlayer(): NodeJS.Timeout {
+    let delay =
+      this.numberOfRuns * this.breathDurationInMillis -
+      this.breathDurationInMillis * this.numberOfFinishBreaths;
     return setTimeout(() => {
       this.finishingBreathsSoundPlayer.start(this.numberOfFinishBreaths);
-    }, this.numberOfRuns * this.breathDurationInMillis - this.breathDurationInMillis * this.numberOfFinishBreaths);
+    }, delay);
   }
 
   private informAboutNewBreath() {
-    if (!this.exerciseRunning) {
-      return;
-    }
+    // if (!this.exerciseRunning) {
+    //   return;
+    // }
 
     this.breathCount++;
     this.newBreathHandlers.forEach((handler) => handler(this.breathCount));
