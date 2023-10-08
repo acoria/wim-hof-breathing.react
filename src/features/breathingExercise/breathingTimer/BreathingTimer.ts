@@ -40,6 +40,8 @@ export class BreathingTimer implements IBreathingTimer {
         () => this.breath(),
         this.breathDurationInMillis / 2
       );
+    }else{
+      this.stop()
     }
   }
 
