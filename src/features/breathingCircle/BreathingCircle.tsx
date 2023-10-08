@@ -7,7 +7,7 @@ export const BreathingCircle: React.FC<IBreathingCircleProps> = (props) => {
   return (
     <div className={`${styles.playCircle} ${props.className}`}>
       <CSSTransition
-        in={props.isBreathingIn && props.isBreathing}
+        in={props.isBreathingIn}
         addEndListener={() => {}}
         classNames={{
           enter: styles.moveCircleUp,
@@ -19,7 +19,9 @@ export const BreathingCircle: React.FC<IBreathingCircleProps> = (props) => {
         }}
       >
         <PlayIcon
-          className={styles.playIcon}
+          className={`${styles.playIcon} ${
+            !props.isBreathing && styles.moveCircleDown
+          }`}
           width={props.width}
           isPlaying={props.isBreathing}
           hideState={props.isBreathing}
