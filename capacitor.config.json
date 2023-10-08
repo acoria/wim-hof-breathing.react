@@ -1,0 +1,8 @@
+{
+    "appId": "io.acoria.wimHofBreathing",
+    "appName": "Wim Hof Breathing",
+    "bundledWebRuntime": false,
+    "npmClient": "npm",
+    "webDir": "build",
+    "cordova": {}
+}

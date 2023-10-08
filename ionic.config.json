@@ -1,0 +1,7 @@
+{
+  "name": "Wim Hof Breathing",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
