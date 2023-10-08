@@ -1,15 +1,16 @@
 import { useMemo, useState } from "react";
 import { BreathingTimer } from "../breathingTimer/BreathingTimer";
-import { IUseBreathingExercisePlayer } from "./IUseBreathingExercisePlayer";
+import { IUseBreathingExercisePlayer as IUseBreathingTimer } from "./IUseBreathingExercisePlayer";
 import { IBreathingTimer } from "../breathingTimer/IBreathingTimer";
 import { BreathingExerciseSoundPlayer } from "../breathingExerciseSoundPlayer/BreathingExerciseSoundPlayer";
 
-export const useBreathingExercisePlayer = (
+export const useBreathingTimer = (
   breathDurationInMillis: number,
   numberOfBreaths: number,
   startDelayInMillis: number = 0
-): IUseBreathingExercisePlayer => {
+): IUseBreathingTimer => {
   const [isRunning, setIsRunning] = useState(false);
+  const [isBreathingIn, setIsBreathingIn] = useState(false);
   const [breathCount, setBreathCount] = useState(0);
 
   const breathingExercisePlayer = useMemo(() => {
@@ -21,7 +22,12 @@ export const useBreathingExercisePlayer = (
 
     breathingTimer.onStart(() => setIsRunning(true));
     breathingTimer.onStop(() => setIsRunning(false));
-    breathingTimer.onNewBreath((breathCount) => setBreathCount(breathCount));
+    // breathingTimer.onNewBreath((breathCount) => setBreathCount(breathCount));
+    breathingTimer.onBreathingIn((breathCount) => {
+      setIsBreathingIn(true);
+      setBreathCount(breathCount);
+    });
+    breathingTimer.onBreathingOut(() => setIsBreathingIn(false));
     new BreathingExerciseSoundPlayer(breathingTimer);
     return breathingTimer;
   }, [breathDurationInMillis, numberOfBreaths]);
@@ -35,9 +41,10 @@ export const useBreathingExercisePlayer = (
   };
 
   return {
-    start,
-    stop,
-    isRunning,
+    startBreathing: start,
+    stopBreathing: stop,
+    isBreathing: isRunning,
+    isBreathingIn,
     breathCount,
   };
 };

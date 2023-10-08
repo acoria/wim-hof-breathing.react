@@ -1,6 +1,7 @@
 export interface IUseBreathingExercisePlayer {
-  start: () => void;
-  stop: () => void;
-  isRunning: boolean;
+  startBreathing: () => void;
+  stopBreathing: () => void;
+  isBreathing: boolean;
+  isBreathingIn: boolean;
   breathCount: number;
 }
