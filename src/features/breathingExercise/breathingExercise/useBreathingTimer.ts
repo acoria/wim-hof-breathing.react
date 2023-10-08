@@ -30,7 +30,7 @@ export const useBreathingTimer = (
     breathingTimer.onBreathingOut(() => setIsBreathingIn(false));
     new BreathingExerciseSoundPlayer(breathingTimer);
     return breathingTimer;
-  }, [breathDurationInMillis, numberOfBreaths]);
+  }, [breathDurationInMillis, numberOfBreaths, startDelayInMillis]);
 
   const start = () => {
     breathingExercisePlayer.start();
