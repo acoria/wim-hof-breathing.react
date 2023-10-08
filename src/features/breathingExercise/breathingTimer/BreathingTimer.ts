@@ -5,8 +5,6 @@ import { IBreathingTimer } from "./IBreathingTimer";
 export class BreathingTimer implements IBreathingTimer {
   private breathInEventManager: IEventManager = new EventManager();
   private breathOutEventManager: IEventManager = new EventManager();
-  private newBreathEventManager: IEventManager<number> =
-    new EventManager<number>();
   private startEventManager: IEventManager = new EventManager();
   private stopEventManager: IEventManager = new EventManager();
   private halfBreathCount = 0;
@@ -29,7 +27,6 @@ export class BreathingTimer implements IBreathingTimer {
       return;
     }
     if (this.isNewBreathingCycle(this.halfBreathCount)) {
-      this.newBreathEventManager.callEvent();
       this.breathInEventManager.callEvent();
     } else {
       this.breathOutEventManager.callEvent();
@@ -40,8 +37,8 @@ export class BreathingTimer implements IBreathingTimer {
         () => this.breath(),
         this.breathDurationInMillis / 2
       );
-    }else{
-      this.stop()
+    } else {
+      this.stop();
     }
   }
 
@@ -74,16 +71,6 @@ export class BreathingTimer implements IBreathingTimer {
     handler: (breathCount: number, totalNumberOfTotalBreaths: number) => void
   ): void {
     this.breathOutEventManager.onEvent(() =>
-      handler(
-        this.getNumberOfBreaths(this.halfBreathCount),
-        this.numberOfBreaths
-      )
-    );
-  }
-  onNewBreath(
-    handler: (breathCount: number, totalNumberOfTotalBreaths: number) => void
-  ): void {
-    this.newBreathEventManager.onEvent(() =>
       handler(
         this.getNumberOfBreaths(this.halfBreathCount),
         this.numberOfBreaths

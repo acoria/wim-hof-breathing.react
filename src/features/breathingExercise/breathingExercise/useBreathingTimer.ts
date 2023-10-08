@@ -22,7 +22,6 @@ export const useBreathingTimer = (
 
     breathingTimer.onStart(() => setIsRunning(true));
     breathingTimer.onStop(() => setIsRunning(false));
-    // breathingTimer.onNewBreath((breathCount) => setBreathCount(breathCount));
     breathingTimer.onBreathingIn((breathCount) => {
       setIsBreathingIn(true);
       setBreathCount(breathCount);

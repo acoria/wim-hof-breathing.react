@@ -7,7 +7,4 @@ export interface IBreathingTimer extends IPlayer {
   onBreathingOut(
     handler: (breathCount: number, totalNumberOfTotalBreaths: number) => void
   ): void;
-  onNewBreath(
-    handler: (breathCount: number, totalNumberOfTotalBreaths: number) => void
-  ): void;
 }
