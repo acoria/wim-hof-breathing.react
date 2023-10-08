@@ -1,3 +1,5 @@
-import { IPlayer } from "../../player/IPlayer";
 
-export interface ISoundPlayer extends IPlayer {}
+export interface ISoundPlayer {
+  play(): void;
+  stop(): void;
+}

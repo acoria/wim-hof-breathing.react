@@ -1,6 +1,6 @@
 export interface IPlayer {
-  onStop(handler: () => void): void;
   onStart(handler: () => void): void;
+  onStop(handler: () => void): void;
   start(): void;
   stop(): void;
 }

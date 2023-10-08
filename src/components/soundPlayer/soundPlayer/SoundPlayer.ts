@@ -1,25 +1,22 @@
-import { Player } from "../../player/Player";
-import { ISoundPlayer } from "./ISoundPlayer";
 import { Howl } from "howler";
+import { ISoundPlayer } from "./ISoundPlayer";
 
 /**
- * filePath needs to be in public folder
+ * A player that can play the sound specified in the filePath.
+ * The filePath needs to be in public folder.
  */
-export class SoundPlayer extends Player implements ISoundPlayer {
+export class SoundPlayer implements ISoundPlayer {
   private sound: Howl;
 
   constructor(filePath: string) {
-    super();
     this.sound = new Howl({ src: filePath, html5: true });
   }
 
-  start() {
+  play() {
     this.sound.play();
-    super.start();
   }
 
   stop(): void {
     this.sound.stop();
-    super.stop();
   }
 }

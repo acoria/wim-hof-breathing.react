@@ -1,12 +1,12 @@
 import { PlayCircle } from "../../playCircle/PlayCircle";
+import styles from "./BreathingExercise.module.css";
 import { IBreathingExerciseProps } from "./IBreathingExerciseProps";
 import { useBreathingExercisePlayer } from "./useBreathingExercisePlayer";
-import styles from "./BreathingExercise.module.css";
 
 export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
   const { start, stop, isRunning, breathCount } = useBreathingExercisePlayer(
     props.breathDurationInMillis,
-    props.numberOfRuns,
+    props.numberOfBreaths,
     props.startDelayInMillis
   );
 
@@ -21,5 +21,5 @@ export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
         className={styles.playCircle}
       />
     </>
-  );
+  )
 };

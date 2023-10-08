@@ -1,5 +1,5 @@
 export interface IBreathingExerciseProps {
-  numberOfRuns: number;
+  numberOfBreaths: number;
   breathDurationInMillis: number;
   startDelayInMillis?: number;
 }
