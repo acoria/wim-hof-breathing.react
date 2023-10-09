@@ -31,7 +31,7 @@ export const BreathingExerciseCounter: React.FC<
   };
 
   const checkForReset = (currentTime: number) => {
-    if (currentTime - timeTouchedScreen >= 1500) {
+    if (currentTime - timeTouchedScreen >= 1000) {
       props.onReset();
     }
   };

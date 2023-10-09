@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { IBreathHoldCounterProps } from "./IBreathHoldCounterProps";
+import styles from "./BreathHoldCounter.module.css";
 
 export const BreathHoldCounter: React.FC<IBreathHoldCounterProps> = (props) => {
   const [secondsBreathHold, setSecondsBreathHold] = useState(-1);
@@ -19,7 +20,10 @@ export const BreathHoldCounter: React.FC<IBreathHoldCounterProps> = (props) => {
   }, []);
 
   return (
-    <div className={props.className} onClick={() => clearTimeout(timeoutId)}>
+    <div
+      className={`${styles.breathHoldCounter} ${props.className}`}
+      onClick={() => clearTimeout(timeoutId)}
+    >
       <h5>{secondsBreathHold}s</h5>
     </div>
   );

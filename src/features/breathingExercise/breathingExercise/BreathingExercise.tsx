@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { BreathingCircle } from "../../breathingCircle/BreathingCircle";
-import { BreathingExerciseCounter } from "../breathingCounter/BreathingExerciseCounter";
+import { BreathingExerciseCounter } from "../breathingExerciseCounter/BreathingExerciseCounter";
 import styles from "./BreathingExercise.module.css";
 import { IBreathingExerciseProps } from "./IBreathingExerciseProps";
 import { useBreathingTimer } from "./useBreathingTimer";
 import { BreathHoldCounter } from "../breathHoldCounter/BreathHoldCounter";
 
 export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
-  const [numberOfFinishedExercises, setNumberOfFinishedExercises] = useState(2);
+  const [numberOfFinishedExercises, setNumberOfFinishedExercises] = useState(0);
   const [showBreathHoldCounter, setShowBreathHoldCounter] = useState(false);
 
   const {
