@@ -10,6 +10,7 @@ export const useBreathingTimer = (
   startDelayInMillis: number = 0
 ): IUseBreathingTimer => {
   const [isRunning, setIsRunning] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
   const [isBreathingIn, setIsBreathingIn] = useState(false);
   const [breathCount, setBreathCount] = useState(0);
 
@@ -29,9 +30,18 @@ export const useBreathingTimer = (
     breathingTimer.onBreathingOut(() => setIsBreathingIn(false));
     new BreathingExerciseSoundPlayer(breathingTimer);
     return breathingTimer;
+    breathingTimer.onFinished(() => setIsFinished(true));
   }, [breathDurationInMillis, numberOfBreaths, startDelayInMillis]);
 
+  const initialize = () => {
+    setIsRunning(false);
+    setIsFinished(false);
+    setIsBreathingIn(false);
+    setBreathCount(0);
+  };
+
   const start = () => {
+    initialize();
     breathingExercisePlayer.start();
   };
 
@@ -43,6 +53,7 @@ export const useBreathingTimer = (
     startBreathing: start,
     stopBreathing: stop,
     isBreathing: isRunning,
+    isFinished,
     isBreathingIn,
     breathCount,
   };

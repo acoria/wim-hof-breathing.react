@@ -9,6 +9,7 @@ export class BreathingTimer implements IBreathingTimer {
   private breathOutEventManager: IEvent<BreathingInfo> = new Event();
   private startEventManager: IEvent<BreathingInfo> = new Event();
   private stopEventManager: IEvent<undefined> = new Event();
+  private finishedEventManager: IEvent<undefined> = new Event();
   private halfBreathCount = 0;
   private breathingRunning = false;
   private breathingTimeout: NodeJS.Timeout | undefined;
@@ -40,12 +41,13 @@ export class BreathingTimer implements IBreathingTimer {
         this.breathDurationInMillis / 2
       );
     } else {
-      this.stop();
+      this.finish();
     }
   }
 
-  private isNewBreathingCycle(halfBreathCount: number): boolean {
-    return halfBreathCount % 2 !== 0;
+  private finish() {
+    this.stopTimer();
+    this.finishedEventManager.raise(undefined);
   }
 
   private getBreathingInfo(): BreathingInfo {
@@ -57,6 +59,15 @@ export class BreathingTimer implements IBreathingTimer {
 
   private getNumberOfBreaths(halfBreathCount: number): number {
     return Math.ceil(halfBreathCount / 2);
+  }
+
+  private isNewBreathingCycle(halfBreathCount: number): boolean {
+    return halfBreathCount % 2 !== 0;
+  }
+
+  private stopTimer() {
+    this.breathingRunning = false;
+    clearTimeout(this.breathingTimeout);
   }
 
   private totalNumberOfBreathsReached(halfBreathCount: number): boolean {
@@ -71,6 +82,10 @@ export class BreathingTimer implements IBreathingTimer {
   }
   onBreathingOut(handler: EventHandler<BreathingInfo>): void {
     this.breathOutEventManager.onEvent(handler);
+  }
+
+  onFinished(handler: () => void): void {
+    this.finishedEventManager.onEvent(handler);
   }
 
   onStart(handler: () => void): void {
@@ -91,8 +106,7 @@ export class BreathingTimer implements IBreathingTimer {
   }
 
   stop() {
-    this.breathingRunning = false;
-    clearTimeout(this.breathingTimeout);
+    this.stopTimer();
     this.stopEventManager.raise(undefined);
   }
 }

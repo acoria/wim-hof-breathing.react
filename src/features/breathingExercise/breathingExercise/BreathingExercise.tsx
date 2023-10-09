@@ -9,6 +9,7 @@ export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
     stopBreathing,
     isBreathing,
     isBreathingIn,
+    isFinished,
     breathCount,
   } = useBreathingTimer(
     props.breathDurationInMillis,
