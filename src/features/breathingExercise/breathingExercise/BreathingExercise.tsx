@@ -6,7 +6,7 @@ import { IBreathingExerciseProps } from "./IBreathingExerciseProps";
 import { useBreathingTimer } from "./useBreathingTimer";
 
 export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
-  const [numberOfFinishedExercises, setNumberOfFinishedExercises] = useState(1);
+  const [numberOfFinishedExercises, setNumberOfFinishedExercises] = useState(2);
 
   const {
     startBreathing,
