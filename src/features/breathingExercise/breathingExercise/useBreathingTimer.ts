@@ -22,9 +22,9 @@ export const useBreathingTimer = (
 
     breathingTimer.onStart(() => setIsRunning(true));
     breathingTimer.onStop(() => setIsRunning(false));
-    breathingTimer.onBreathingIn((breathCount) => {
+    breathingTimer.onBreathingIn((breathingInfo) => {
       setIsBreathingIn(true);
-      setBreathCount(breathCount);
+      setBreathCount(breathingInfo.index);
     });
     breathingTimer.onBreathingOut(() => setIsBreathingIn(false));
     new BreathingExerciseSoundPlayer(breathingTimer);

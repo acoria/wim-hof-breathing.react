@@ -17,8 +17,13 @@ export class BreathingExerciseSoundPlayer {
     breathingTimer: IBreathingTimer,
     private numberOfFinishingBreaths: number = 3
   ) {
-    breathingTimer.onBreathingIn((breathCount, totalNumberOfBreaths) => {
-      if (this.isFinishingBreath(breathCount, totalNumberOfBreaths)) {
+    breathingTimer.onBreathingIn((breathingInfo) => {
+      if (
+        this.isFinishingBreath(
+          breathingInfo.index,
+          breathingInfo.totalNumberOfBreaths
+        )
+      ) {
         this.finishingBreathsSound.play();
       } else {
         this.breathInSound.play();

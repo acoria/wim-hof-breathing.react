@@ -1,10 +1,7 @@
 import { IPlayer } from "../../../components/player/IPlayer";
+import { BreathingInfo } from "./BreathingInfo";
 
 export interface IBreathingTimer extends IPlayer {
-  onBreathingIn(
-    handler: (breathCount: number, totalNumberOfTotalBreaths: number) => void
-  ): void;
-  onBreathingOut(
-    handler: (breathCount: number, totalNumberOfTotalBreaths: number) => void
-  ): void;
+  onBreathingIn(handler: (breathingInfo: BreathingInfo) => void): void;
+  onBreathingOut(handler: (breathingInfo: BreathingInfo) => void): void;
 }

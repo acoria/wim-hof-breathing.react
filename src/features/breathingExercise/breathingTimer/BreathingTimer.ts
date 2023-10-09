@@ -1,12 +1,14 @@
-import { EventManager } from "../../../components/eventManager/EventManager";
-import { IEventManager } from "../../../components/eventManager/IEventManager";
+import { Event } from "../../../components/eventManager/Event";
+import { EventHandler } from "../../../components/eventManager/EventHandler";
+import { IEvent } from "../../../components/eventManager/IEvent";
+import { BreathingInfo } from "./BreathingInfo";
 import { IBreathingTimer } from "./IBreathingTimer";
 
 export class BreathingTimer implements IBreathingTimer {
-  private breathInEventManager: IEventManager = new EventManager();
-  private breathOutEventManager: IEventManager = new EventManager();
-  private startEventManager: IEventManager = new EventManager();
-  private stopEventManager: IEventManager = new EventManager();
+  private breathInEventManager: IEvent<BreathingInfo> = new Event();
+  private breathOutEventManager: IEvent<BreathingInfo> = new Event();
+  private startEventManager: IEvent<BreathingInfo> = new Event();
+  private stopEventManager: IEvent<undefined> = new Event();
   private halfBreathCount = 0;
   private breathingRunning = false;
   private breathingTimeout: NodeJS.Timeout | undefined;
@@ -27,9 +29,9 @@ export class BreathingTimer implements IBreathingTimer {
       return;
     }
     if (this.isNewBreathingCycle(this.halfBreathCount)) {
-      this.breathInEventManager.callEvent();
+      this.breathInEventManager.raise(this.getBreathingInfo());
     } else {
-      this.breathOutEventManager.callEvent();
+      this.breathOutEventManager.raise(this.getBreathingInfo());
     }
 
     if (!this.totalNumberOfBreathsReached(this.halfBreathCount)) {
@@ -46,6 +48,13 @@ export class BreathingTimer implements IBreathingTimer {
     return halfBreathCount % 2 !== 0;
   }
 
+  private getBreathingInfo(): BreathingInfo {
+    return {
+      index: this.getNumberOfBreaths(this.halfBreathCount),
+      totalNumberOfBreaths: this.numberOfBreaths,
+    };
+  }
+
   private getNumberOfBreaths(halfBreathCount: number): number {
     return Math.ceil(halfBreathCount / 2);
   }
@@ -57,25 +66,11 @@ export class BreathingTimer implements IBreathingTimer {
     );
   }
 
-  onBreathingIn(
-    handler: (breathCount: number, totalNumberOfBreaths: number) => void
-  ): void {
-    this.breathInEventManager.onEvent(() =>
-      handler(
-        this.getNumberOfBreaths(this.halfBreathCount),
-        this.numberOfBreaths
-      )
-    );
+  onBreathingIn(handler: EventHandler<BreathingInfo>): void {
+    this.breathInEventManager.onEvent(handler);
   }
-  onBreathingOut(
-    handler: (breathCount: number, totalNumberOfTotalBreaths: number) => void
-  ): void {
-    this.breathOutEventManager.onEvent(() =>
-      handler(
-        this.getNumberOfBreaths(this.halfBreathCount),
-        this.numberOfBreaths
-      )
-    );
+  onBreathingOut(handler: EventHandler<BreathingInfo>): void {
+    this.breathOutEventManager.onEvent(handler);
   }
 
   onStart(handler: () => void): void {
@@ -87,7 +82,7 @@ export class BreathingTimer implements IBreathingTimer {
   }
 
   start() {
-    this.startEventManager.callEvent();
+    this.startEventManager.raise(this.getBreathingInfo());
     setTimeout(() => {
       this.initialize();
       this.breathingRunning = true;
@@ -98,6 +93,6 @@ export class BreathingTimer implements IBreathingTimer {
   stop() {
     this.breathingRunning = false;
     clearTimeout(this.breathingTimeout);
-    this.stopEventManager.callEvent();
+    this.stopEventManager.raise(undefined);
   }
 }
