@@ -4,9 +4,11 @@ import { BreathingExerciseCounter } from "../breathingCounter/BreathingExerciseC
 import styles from "./BreathingExercise.module.css";
 import { IBreathingExerciseProps } from "./IBreathingExerciseProps";
 import { useBreathingTimer } from "./useBreathingTimer";
+import { BreathHoldCounter } from "../breathHoldCounter/BreathHoldCounter";
 
 export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
   const [numberOfFinishedExercises, setNumberOfFinishedExercises] = useState(2);
+  const [showBreathHoldCounter, setShowBreathHoldCounter] = useState(false);
 
   const {
     startBreathing,
@@ -23,8 +25,15 @@ export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
   useEffect(() => {
     if (isFinished) {
       setNumberOfFinishedExercises((previous) => previous + 1);
+      setShowBreathHoldCounter(true);
     }
   }, [isFinished]);
+
+  useEffect(() => {
+    if (isBreathing) {
+      setShowBreathHoldCounter(false);
+    }
+  }, [isBreathing]);
 
   return (
     <>
@@ -39,6 +48,9 @@ export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
         />
       </div>
       {isBreathing && <h1 className={styles.breathCounter}>{breathCount}</h1>}
+      {showBreathHoldCounter && (
+        <BreathHoldCounter className={styles.breathCounter} />
+      )}
       <BreathingCircle
         isBreathing={isBreathing}
         onStartBreathing={startBreathing}
