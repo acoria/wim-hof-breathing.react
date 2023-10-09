@@ -2,5 +2,11 @@ import { BreathingExercise } from "./features/breathingExercise/breathingExercis
 
 export const App = () => {
   // return ( <BreathingExercise breathDurationInMillis={1000} numberOfBreaths={2} />);
-  return <BreathingExercise breathDurationInMillis={3200} numberOfBreaths={40} />;
+  return (
+    <BreathingExercise
+      breathDurationInMillis={3200}
+      numberOfBreaths={40}
+      startDelayInMillis={1000}
+    />
+  );
 };
