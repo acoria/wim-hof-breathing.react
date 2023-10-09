@@ -29,8 +29,11 @@ export const useBreathingTimer = (
     });
     breathingTimer.onBreathingOut(() => setIsBreathingIn(false));
     new BreathingExerciseSoundPlayer(breathingTimer);
+    breathingTimer.onFinished(() => {
+      setIsFinished(true);
+      setIsRunning(false);
+    });
     return breathingTimer;
-    breathingTimer.onFinished(() => setIsFinished(true));
   }, [breathDurationInMillis, numberOfBreaths, startDelayInMillis]);
 
   const initialize = () => {

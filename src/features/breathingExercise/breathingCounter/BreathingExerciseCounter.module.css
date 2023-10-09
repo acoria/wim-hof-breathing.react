@@ -1,0 +1,16 @@
+.breathingExerciseCounter {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row-reverse;
+  gap: 2rem;
+}
+
+.indicator {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid var(--primary);
+}
+
+.filledIndicator {
+  background-color: var(--primary);
+}
