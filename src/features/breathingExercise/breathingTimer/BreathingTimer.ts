@@ -87,11 +87,11 @@ export class BreathingTimer implements IBreathingTimer {
   }
 
   start() {
+    this.startEventManager.callEvent();
     setTimeout(() => {
       this.initialize();
       this.breathingRunning = true;
       this.breath();
-      this.startEventManager.callEvent();
     }, this.startDelayInMillis);
   }
 
