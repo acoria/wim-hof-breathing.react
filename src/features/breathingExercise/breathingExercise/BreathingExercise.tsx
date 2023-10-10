@@ -62,6 +62,8 @@ export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
         <BreathHoldCounter className={styles.breathCounter} />
       )}
       <BreathingCircle
+        breathDurationInMillis={props.breathDurationInMillis}
+        delayBeforeStartingAnimationsInMillis={props.startDelayInMillis}
         isBreathing={isBreathing}
         onStartBreathing={startBreathing}
         onStopBreathing={stopBreathing}

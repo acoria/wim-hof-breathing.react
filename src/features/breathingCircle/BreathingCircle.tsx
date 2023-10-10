@@ -3,11 +3,34 @@ import { IBreathingCircleProps } from "./IBreathingCircleProps";
 import styles from "./BreathingCircle.module.css";
 import { CSSTransition } from "react-transition-group";
 import { style } from "../../utils/style";
+import { CSSProperties, useCallback } from "react";
 
 export const BreathingCircle: React.FC<IBreathingCircleProps> = (props) => {
+  const convertTimingVariablesToCSSProps = useCallback((): CSSProperties => {
+    let cssProps: CSSProperties = {};
+    if (props.breathDurationInMillis) {
+      const halfBreathDuration = `${props.breathDurationInMillis / 2}ms`;
+      cssProps = {
+        ...cssProps,
+        "--halfBreathingTime": halfBreathDuration,
+      } as CSSProperties;
+    }
+    if (props.delayBeforeStartingAnimationsInMillis) {
+      cssProps = {
+        ...cssProps,
+        "--delayBeforeTimerStart": `${props.delayBeforeStartingAnimationsInMillis}ms`,
+      } as CSSProperties;
+    }
+    return cssProps;
+  }, [
+    props.breathDurationInMillis,
+    props.delayBeforeStartingAnimationsInMillis,
+  ]);
+
   return (
     <div className={style(styles.playCircle, props.className)}>
       <CSSTransition
+        style={convertTimingVariablesToCSSProps()}
         in={props.isBreathingIn}
         addEndListener={() => {}}
         classNames={{
