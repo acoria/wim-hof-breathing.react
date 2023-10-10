@@ -4,7 +4,7 @@ export const App = () => {
   return (
     <BreathingExercise
       breathDurationInMillis={3200}
-      numberOfBreaths={1}
+      numberOfBreaths={40}
       startDelayInMillis={1000}
     />
   );
