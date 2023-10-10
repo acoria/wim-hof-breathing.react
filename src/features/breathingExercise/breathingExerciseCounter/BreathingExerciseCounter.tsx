@@ -1,6 +1,7 @@
 import { ReactNode, useState } from "react";
 import styles from "./BreathingExerciseCounter.module.css";
 import { IBreathingExerciseCounterProps } from "./IBreathingExerciseCounterProps";
+import { style } from "../../../utils/style";
 
 export const BreathingExerciseCounter: React.FC<
   IBreathingExerciseCounterProps
@@ -15,7 +16,7 @@ export const BreathingExerciseCounter: React.FC<
       blocks.push(
         <div
           key={key}
-          className={`${styles.indicator} ${styles.filledIndicator}`}
+          className={style(styles.indicator, styles.filledIndicator)}
         ></div>
       );
       index++;
@@ -43,7 +44,7 @@ export const BreathingExerciseCounter: React.FC<
 
   return (
     <div
-      className={`${styles.breathingExerciseCounter} ${props.className}`}
+      className={style(styles.breathingExerciseCounter, props.className)}
       onMouseDown={startResetTimer}
       onMouseMove={cancelResetTimer}
       onMouseUp={cancelResetTimer}

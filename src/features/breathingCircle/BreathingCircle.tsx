@@ -2,10 +2,11 @@ import { PlayIcon } from "../../components/icons/playIcon/PlayIcon";
 import { IBreathingCircleProps } from "./IBreathingCircleProps";
 import styles from "./BreathingCircle.module.css";
 import { CSSTransition } from "react-transition-group";
+import { style } from "../../utils/style";
 
 export const BreathingCircle: React.FC<IBreathingCircleProps> = (props) => {
   return (
-    <div className={`${styles.playCircle} ${props.className}`}>
+    <div className={style(styles.playCircle, props.className)}>
       <CSSTransition
         in={props.isBreathingIn}
         addEndListener={() => {}}
