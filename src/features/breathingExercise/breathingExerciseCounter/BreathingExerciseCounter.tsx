@@ -5,7 +5,7 @@ import { IBreathingExerciseCounterProps } from "./IBreathingExerciseCounterProps
 export const BreathingExerciseCounter: React.FC<
   IBreathingExerciseCounterProps
 > = (props) => {
-  const [timeTouchedScreen, setTimeTouchedScreen] = useState<number>(0);
+  const [resetTimeoutId, setResetTimeoutId] = useState<NodeJS.Timeout>();
 
   let index = 0;
   let blocks: ReactNode[] = [];
@@ -30,19 +30,26 @@ export const BreathingExerciseCounter: React.FC<
     return blocks;
   };
 
-  const checkForReset = (currentTime: number) => {
-    if (currentTime - timeTouchedScreen >= 1000) {
-      props.onReset();
-    }
+  const startResetTimer = () =>
+    setResetTimeoutId(
+      setTimeout(() => {
+        props.onReset();
+      }, 1000)
+    );
+
+  const cancelResetTimer = () => {
+    clearTimeout(resetTimeoutId);
   };
 
   return (
     <div
       className={`${styles.breathingExerciseCounter} ${props.className}`}
-      onMouseDown={() => setTimeTouchedScreen(Date.now())}
-      onMouseUp={() => checkForReset(Date.now())}
-      onTouchStart={() => setTimeTouchedScreen(Date.now())}
-      onTouchEnd={() => checkForReset(Date.now())}
+      onMouseDown={startResetTimer}
+      onMouseMove={cancelResetTimer}
+      onMouseUp={cancelResetTimer}
+      onTouchStart={startResetTimer}
+      onTouchMove={cancelResetTimer}
+      onTouchEnd={cancelResetTimer}
     >
       {buildIndicators()}
     </div>
