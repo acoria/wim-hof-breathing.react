@@ -4,24 +4,16 @@ import { BreathHoldCounter } from "../breathHoldCounter/BreathHoldCounter";
 import { BreathingExerciseCounter } from "../breathingExerciseCounter/BreathingExerciseCounter";
 import styles from "./BreathingExercise.module.css";
 import { IBreathingExerciseProps } from "./IBreathingExerciseProps";
-import { useBreathingTimer } from "./useBreathingTimer";
+import { useBreathingTimer } from "./hooks/useBreathingTimer";
+import { useLocalStorage } from "../../../hooks/useLocalStorage";
 
 export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
   const NUMBER_FINISHED_EXERCISES = "NUMBER_FINISHED_EXERCISES";
-  const [numberOfFinishedExercises, setNumberOfFinishedExercises] = useState(
-    () => {
-      const locallyStoredFinishedExercises = localStorage.getItem(
-        NUMBER_FINISHED_EXERCISES
-      );
-      let numberOfStoredFinishedExercises = 0;
-      if (locallyStoredFinishedExercises) {
-        numberOfStoredFinishedExercises = JSON.parse(
-          locallyStoredFinishedExercises
-        ) as number;
-      }
-      return numberOfStoredFinishedExercises;
-    }
-  );
+  const [
+    numberOfFinishedExercises,
+    updateNumberOfFinishedExercises,
+    updateNumberOfFinishedExercisesUsingPreviousValue,
+  ] = useLocalStorage(NUMBER_FINISHED_EXERCISES, 0);
   const [showBreathHoldCounter, setShowBreathHoldCounter] = useState(false);
 
   const {
@@ -38,27 +30,18 @@ export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
   );
   useEffect(() => {
     if (isFinished) {
-      setNumberOfFinishedExercises((previous) => {
-        const newNumber = previous + 1;
-        writeFinishedExercisesIntoStorage(newNumber);
-        return newNumber;
-      });
+      updateNumberOfFinishedExercisesUsingPreviousValue(
+        (previous) => previous + 1
+      );
       setShowBreathHoldCounter(true);
     }
-  }, [isFinished]);
+  }, [isFinished, updateNumberOfFinishedExercisesUsingPreviousValue]);
 
   useEffect(() => {
     if (isBreathing) {
       setShowBreathHoldCounter(false);
     }
   }, [isBreathing]);
-
-  const writeFinishedExercisesIntoStorage = (finishedExercises: number) => {
-    localStorage.setItem(
-      NUMBER_FINISHED_EXERCISES,
-      JSON.stringify(finishedExercises)
-    );
-  };
 
   return (
     <>
@@ -70,8 +53,7 @@ export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
           maxNumberOfBreathingExercises={4}
           numberOfBreathingExercises={numberOfFinishedExercises}
           onReset={() => {
-            setNumberOfFinishedExercises(0);
-            writeFinishedExercisesIntoStorage(0);
+            updateNumberOfFinishedExercises(0);
           }}
         />
       </div>

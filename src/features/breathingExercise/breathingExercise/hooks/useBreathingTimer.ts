@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
-import { BreathingTimer } from "../breathingTimer/BreathingTimer";
+import { BreathingTimer } from "../../breathingTimer/BreathingTimer";
 import { IUseBreathingExercisePlayer as IUseBreathingTimer } from "./IUseBreathingExercisePlayer";
-import { IBreathingTimer } from "../breathingTimer/IBreathingTimer";
-import { BreathingExerciseSoundPlayer } from "../breathingExerciseSoundPlayer/BreathingExerciseSoundPlayer";
+import { IBreathingTimer } from "../../breathingTimer/IBreathingTimer";
+import { BreathingExerciseSoundPlayer } from "../../breathingExerciseSoundPlayer/BreathingExerciseSoundPlayer";
 
 export const useBreathingTimer = (
   breathDurationInMillis: number,
