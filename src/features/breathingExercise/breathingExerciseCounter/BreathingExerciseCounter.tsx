@@ -17,6 +17,7 @@ export const BreathingExerciseCounter: React.FC<
         <div
           key={key}
           className={style(styles.indicator, styles.filledIndicator)}
+          {...resetTimerEvents}
         ></div>
       );
       index++;
@@ -25,27 +26,34 @@ export const BreathingExerciseCounter: React.FC<
     //add empty blocks if necessary
     if (props.maxNumberOfBreathingExercises)
       while (blocks.length < props.maxNumberOfBreathingExercises) {
-        blocks.push(<div key={key++} className={styles.indicator}></div>);
+        blocks.push(
+          <div
+            key={key++}
+            className={styles.indicator}
+            {...resetTimerEvents}
+          ></div>
+        );
         key++;
       }
     return blocks;
+  };
+
+  const cancelResetTimer = () => clearTimeout(resetTimeoutId);
+
+  const resetTimerEvents = {
+    onMouseDown: () => startResetTimer(),
+    onMouseUp: () => cancelResetTimer(),
+    onTouchStart: () => startResetTimer(),
+    onTouchMove: () => cancelResetTimer(),
+    onTouchEnd: () => cancelResetTimer(),
   };
 
   const startResetTimer = () => {
     setResetTimeoutId(setTimeout(() => props.onReset(), 1000));
   };
 
-  const cancelResetTimer = () => clearTimeout(resetTimeoutId);
-
   return (
-    <div
-      className={style(styles.breathingExerciseCounter, props.className)}
-      onMouseDown={startResetTimer}
-      onMouseUp={cancelResetTimer}
-      onTouchStart={startResetTimer}
-      onTouchMove={cancelResetTimer}
-      onTouchEnd={cancelResetTimer}
-    >
+    <div className={style(styles.breathingExerciseCounter, props.className)}>
       {buildIndicators()}
     </div>
   );
