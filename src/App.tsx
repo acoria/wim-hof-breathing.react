@@ -9,7 +9,7 @@ const exerciseProps: IBreathingExerciseProps = {
 
 const debugExerciseProps: IBreathingExerciseProps = {
   breathDurationInMillis: 1000,
-  numberOfBreaths: 2,
+  numberOfBreaths: 1,
   startDelayInMillis: 1000,
 };
 
