@@ -13,6 +13,7 @@ export class BreathingTimer implements IBreathingTimer {
   private halfBreathCount = 0;
   private breathingRunning = false;
   private breathingTimeout: NodeJS.Timeout | undefined;
+  private delayTimeout: NodeJS.Timeout | undefined;
 
   constructor(
     private numberOfBreaths: number,
@@ -67,6 +68,7 @@ export class BreathingTimer implements IBreathingTimer {
 
   private stopTimer() {
     this.breathingRunning = false;
+    clearTimeout(this.delayTimeout);
     clearTimeout(this.breathingTimeout);
   }
 
@@ -98,7 +100,7 @@ export class BreathingTimer implements IBreathingTimer {
 
   start() {
     this.startEventManager.raise(this.getBreathingInfo());
-    setTimeout(() => {
+    this.delayTimeout = setTimeout(() => {
       this.initialize();
       this.breathingRunning = true;
       this.breath();
