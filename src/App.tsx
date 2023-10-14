@@ -8,17 +8,17 @@ const exerciseProps: IBreathingExerciseProps = {
 };
 
 const debugExerciseProps: IBreathingExerciseProps = {
-  breathDurationInMillis: 3200,
-  // breathDurationInMillis: 1000,
-  numberOfBreaths: 5,
+  // breathDurationInMillis: 3200,
+  breathDurationInMillis: 1000,
+  numberOfBreaths: 2,
   startDelayInMillis: 1000,
 };
 
 export const App = () => {
   return (
     <BreathingExercise
-      // {...exerciseProps}
-      {...debugExerciseProps}
+      {...exerciseProps}
+      // {...debugExerciseProps}
     />
   );
 };

@@ -31,22 +31,16 @@ export const BreathingExerciseCounter: React.FC<
     return blocks;
   };
 
-  const startResetTimer = () =>
-    setResetTimeoutId(
-      setTimeout(() => {
-        props.onReset();
-      }, 1000)
-    );
-
-  const cancelResetTimer = () => {
-    clearTimeout(resetTimeoutId);
+  const startResetTimer = () => {
+    setResetTimeoutId(setTimeout(() => props.onReset(), 1000));
   };
+
+  const cancelResetTimer = () => clearTimeout(resetTimeoutId);
 
   return (
     <div
       className={style(styles.breathingExerciseCounter, props.className)}
       onMouseDown={startResetTimer}
-      onMouseMove={cancelResetTimer}
       onMouseUp={cancelResetTimer}
       onTouchStart={startResetTimer}
       onTouchMove={cancelResetTimer}

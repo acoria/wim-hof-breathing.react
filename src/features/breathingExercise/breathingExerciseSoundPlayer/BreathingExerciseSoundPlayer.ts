@@ -14,6 +14,7 @@ export class BreathingExerciseSoundPlayer {
   );
   private finishingBreathInSound: ISoundPlayer = new SoundPlayer(
     "./assets/sounds/gong.mp3"
+    // "./assets/sounds/long_soft_gong.mp3"
   );
 
   constructor(
