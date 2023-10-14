@@ -8,6 +8,10 @@ import { ISoundPlayer } from "./ISoundPlayer";
 export class SoundPlayer implements ISoundPlayer {
   private sound: Howl;
 
+  /**
+   * @param filePath for a file in the public folder.
+   * e.g. "./assets/sounds/bottle_pop.mp3"
+   */
   constructor(filePath: string) {
     this.sound = new Howl({ src: filePath });
   }

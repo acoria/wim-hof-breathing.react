@@ -1,7 +1,7 @@
 import { ReactNode, useState } from "react";
+import { style } from "../../../utils/style";
 import styles from "./BreathingExerciseCounter.module.css";
 import { IBreathingExerciseCounterProps } from "./IBreathingExerciseCounterProps";
-import { style } from "../../../utils/style";
 
 export const BreathingExerciseCounter: React.FC<
   IBreathingExerciseCounterProps
