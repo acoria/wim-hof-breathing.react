@@ -19,20 +19,3 @@
   width: 100%;
   bottom: 10%;
 }
-
-.title {
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-}
-
-.title h1 {
-  margin: 0;
-  margin-top: 2rem;
-  background-color: black;
-  font-variant: small-caps;
-  color: var(--primary);
-  justify-self: end;
-  padding: 0.7rem 1rem;
-  box-shadow: -2px 2px 5px var(--primary);
-}

@@ -1,0 +1,4 @@
+.exerciseList {
+  display: flex;
+  flex-direction: column;
+}

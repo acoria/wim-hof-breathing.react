@@ -7,6 +7,7 @@ import { IBreathingExerciseProps } from "./IBreathingExerciseProps";
 import { useBreathingTimer } from "./hooks/useBreathingTimer";
 import { useLocalStorage } from "../../../hooks/useLocalStorage";
 import { SoundPlayer } from "../../../components/soundPlayer/soundPlayer/SoundPlayer";
+import { ExerciseTitle } from "../../exerciseTitle/ExerciseTitle";
 
 export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
   const NUMBER_FINISHED_EXERCISES = "NUMBER_FINISHED_EXERCISES";
@@ -52,9 +53,7 @@ export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
 
   return (
     <>
-      <div className={styles.title}>
-        <h1>Wim Hof Breathing</h1>
-      </div>
+      <ExerciseTitle title="Wim Hof Breathing" />
       <div className={styles.breathingExerciseCounter}>
         <BreathingExerciseCounter
           maxNumberOfBreathingExercises={4}
