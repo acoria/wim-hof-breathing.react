@@ -1,4 +1,8 @@
-.exerciseList {
+.menu {
   display: flex;
   flex-direction: column;
+}
+
+.menuItem {
+  cursor: pointer;
 }
