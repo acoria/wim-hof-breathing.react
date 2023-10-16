@@ -1,14 +1,11 @@
-import { DetailScreen } from "../../components/detailScreen/DetailScreen";
+import { BreathDurationSetting } from "../features/breathDurationSetting/BreathDurationSetting";
 import { ISettingsProps } from "./ISettingsProps";
 import styles from "./Settings.module.css";
-import { BreathDurationSetting } from "../features/breathDurationSetting/BreathDurationSetting";
 
 export const Settings: React.FC<ISettingsProps> = () => {
   return (
-    <DetailScreen title={"Settings"}>
-      <div className={styles.settings}>
-        <BreathDurationSetting />
-      </div>
-    </DetailScreen>
+    <div className={styles.settings}>
+      <BreathDurationSetting />
+    </div>
   );
 };

@@ -30,7 +30,14 @@ export const Dashboard: React.FC = () => {
   ): IMenuItem => {
     return {
       title: title,
-      component: <DetailScreen title={title}>{children}</DetailScreen>,
+      component: (
+        <DetailScreen
+          title={title}
+          onHomeButtonClick={() => setSelectedItem(undefined)}
+        >
+          {children}
+        </DetailScreen>
+      ),
     };
   };
 
@@ -44,7 +51,7 @@ export const Dashboard: React.FC = () => {
     ),
     buildMenuItemWithDetailScreen("Pain soothing"),
     buildMenuItemWithDetailScreen("Good mood practice"),
-    { title: "Settings", component: <Settings /> },
+    buildMenuItemWithDetailScreen("Settings", <Settings />),
   ];
 
   const menuItemSelectedHandler = (component: ReactNode) => {

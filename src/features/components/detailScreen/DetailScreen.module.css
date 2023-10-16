@@ -1,11 +1,16 @@
-.detailScreen{
-
+.detailScreen {
 }
 
-.title{
-
+.homeIcon {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  font-size: 2rem;
+  color: var(--primary);
 }
 
-.children{
-    
+.title {
+}
+
+.children {
 }
