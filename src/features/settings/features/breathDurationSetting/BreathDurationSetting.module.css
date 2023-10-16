@@ -1,5 +1,11 @@
-.slider{
+.sliderWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.slider {
   margin-top: 2.5rem;
+  width: 80%;
 }
 
 .slider .thumb {
