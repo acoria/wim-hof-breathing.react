@@ -1,7 +1,7 @@
 import { ReactNode, useState } from "react";
 import { BreathingExercise } from "../breathingExercise/breathingExercise/BreathingExercise";
-import { IMenuItem } from "../menu/IMenuItem";
-import { Menu } from "../menu/Menu";
+import { IMenuItem } from "../components/menu/IMenuItem";
+import { Menu } from "../components/menu/Menu";
 import { IBreathingExerciseProps } from "../breathingExercise/breathingExercise/IBreathingExerciseProps";
 import { Settings } from "../settings/Settings";
 

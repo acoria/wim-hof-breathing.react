@@ -1,4 +1,5 @@
 :root {
   --primary: #42a2bf;
-  --secondary: #c7e4ef;
+  --secondary: black;
+  --accent: #c7e4ef;
 }

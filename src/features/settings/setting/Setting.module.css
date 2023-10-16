@@ -1,0 +1,12 @@
+.setting {
+  background-color: var(--secondary);
+  padding: 0.2rem 0.5rem;
+  box-shadow: -2px 2px 5px var(--primary);
+}
+
+.title {
+  font-size: large;
+  font-weight: 600;
+  color: var(--primary);
+  font-variant: small-caps;
+}

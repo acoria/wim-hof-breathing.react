@@ -1,0 +1,25 @@
+.slider{
+  margin-top: 2.5rem;
+}
+
+.slider .thumb {
+  color: var(--primary);
+}
+
+.slider .track {
+  color: var(--primary);
+}
+
+.slider .rail {
+  color: var(--accent);
+}
+
+.slider .mark {
+  background-color: var(--primary);
+}
+
+.slider .thumb .valueLabel {
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-weight: 600;
+}
