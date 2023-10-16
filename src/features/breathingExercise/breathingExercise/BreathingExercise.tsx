@@ -1,13 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
+import { SoundPlayer } from "../../../components/soundPlayer/soundPlayer/SoundPlayer";
+import { useLocalStorage } from "../../../hooks/useLocalStorage";
 import { BreathingCircle } from "../../breathingCircle/BreathingCircle";
 import { BreathHoldCounter } from "../breathHoldCounter/BreathHoldCounter";
 import { BreathingExerciseCounter } from "../breathingExerciseCounter/BreathingExerciseCounter";
 import styles from "./BreathingExercise.module.css";
 import { IBreathingExerciseProps } from "./IBreathingExerciseProps";
 import { useBreathingTimer } from "./hooks/useBreathingTimer";
-import { useLocalStorage } from "../../../hooks/useLocalStorage";
-import { SoundPlayer } from "../../../components/soundPlayer/soundPlayer/SoundPlayer";
-import { ScreenTitle } from "../../components/screenTitle/ScreenTitle";
 
 export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
   const NUMBER_FINISHED_EXERCISES = "NUMBER_FINISHED_EXERCISES";
@@ -53,7 +52,6 @@ export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
 
   return (
     <>
-      <ScreenTitle title="Wim Hof Breathing" />
       <div className={styles.breathingExerciseCounter}>
         <BreathingExerciseCounter
           maxNumberOfBreathingExercises={4}

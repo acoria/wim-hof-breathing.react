@@ -5,9 +5,8 @@ import { ScreenTitle } from "../screenTitle/ScreenTitle";
 export const DetailScreen: React.FC<IDetailScreenProps> = (props) => {
   return (
     <div className={styles.detailScreen}>
-      {/* <div className={styles.title}>{props.title}</div> */}
       <ScreenTitle title={props.title} />
-      <div className={styles.children}>{props.children}E</div>
+      <div className={styles.children}>{props.children}</div>
     </div>
   );
 };

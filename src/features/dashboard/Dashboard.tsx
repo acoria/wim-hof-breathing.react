@@ -5,6 +5,7 @@ import { Menu } from "../components/menu/Menu";
 import { IBreathingExerciseProps } from "../breathingExercise/breathingExercise/IBreathingExerciseProps";
 import { Settings } from "../settings/settings/Settings";
 import { useBreathDurationLocalStorage } from "../settings/features/breathDurationSetting/useBreathDurationLocalStorage";
+import { DetailScreen } from "../components/detailScreen/DetailScreen";
 
 const debugExerciseProps: IBreathingExerciseProps = {
   // breathDurationInMillis: 3200,
@@ -23,17 +24,26 @@ export const Dashboard: React.FC = () => {
     startDelayInMillis: 1000,
   };
 
+  const buildMenuItemWithDetailScreen = (
+    title: string,
+    children?: ReactNode | ReactNode[]
+  ): IMenuItem => {
+    return {
+      title: title,
+      component: <DetailScreen title={title}>{children}</DetailScreen>,
+    };
+  };
+
   const menuItems: IMenuItem[] = [
-    {
-      title: "Wim Hof Breathing",
-      component: (
-        <BreathingExercise
-          {...exerciseProps}
-          //    {...debugExerciseProps}
-        />
-      ),
-    },
-    { title: "Pain soothing", component: <></> },
+    buildMenuItemWithDetailScreen(
+      "Wim Hof Breathing",
+      <BreathingExercise
+        {...exerciseProps}
+        // {...debugExerciseProps}
+      />
+    ),
+    buildMenuItemWithDetailScreen("Pain soothing"),
+    buildMenuItemWithDetailScreen("Good mood practice"),
     { title: "Settings", component: <Settings /> },
   ];
 
