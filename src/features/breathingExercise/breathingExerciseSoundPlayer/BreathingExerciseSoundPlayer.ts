@@ -1,5 +1,5 @@
-import { ISoundPlayer } from "../../../components/soundPlayer/soundPlayer/ISoundPlayer";
-import { SoundPlayer } from "../../../components/soundPlayer/soundPlayer/SoundPlayer";
+import { ISoundPlayer } from "../../../services/soundPlayer/soundPlayer/ISoundPlayer";
+import { SoundPlayer } from "../../../services/soundPlayer/soundPlayer/SoundPlayer";
 import { IBreathingTimer } from "../breathingTimer/IBreathingTimer";
 
 export class BreathingExerciseSoundPlayer {

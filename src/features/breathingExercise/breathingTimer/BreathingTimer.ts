@@ -1,6 +1,6 @@
-import { Event } from "../../../components/eventManager/Event";
-import { EventHandler } from "../../../components/eventManager/EventHandler";
-import { IEvent } from "../../../components/eventManager/IEvent";
+import { Event } from "../../../services/eventManager/Event";
+import { EventHandler } from "../../../services/eventManager/EventHandler";
+import { IEvent } from "../../../services/eventManager/IEvent";
 import { BreathingInfo } from "./BreathingInfo";
 import { IBreathingTimer } from "./IBreathingTimer";
 

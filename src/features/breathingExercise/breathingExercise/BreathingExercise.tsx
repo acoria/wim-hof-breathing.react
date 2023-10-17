@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { SoundPlayer } from "../../../components/soundPlayer/soundPlayer/SoundPlayer";
+import { SoundPlayer } from "../../../services/soundPlayer/soundPlayer/SoundPlayer";
 import { useLocalStorage } from "../../../hooks/useLocalStorage";
 import { BreathingCircle } from "../../breathingCircle/BreathingCircle";
 import { BreathHoldCounter } from "../breathHoldCounter/BreathHoldCounter";

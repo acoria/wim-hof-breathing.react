@@ -1,10 +1,11 @@
-.sliderWrapper {
+.breathDurationSetting {
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
-.slider {
   margin-top: 2.5rem;
+}
+
+.sliderWrapper {
   width: 80%;
 }
 

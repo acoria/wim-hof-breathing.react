@@ -1,4 +1,4 @@
-import { IPlayer } from "../../../components/player/IPlayer";
+import { IPlayer } from "../../../services/player/IPlayer";
 import { BreathingInfo } from "./BreathingInfo";
 
 export interface IBreathingTimer extends IPlayer {

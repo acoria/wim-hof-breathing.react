@@ -49,8 +49,8 @@ export const Dashboard: React.FC = () => {
         // {...debugExerciseProps}
       />
     ),
-    buildMenuItemWithDetailScreen("Pain soothing"),
-    buildMenuItemWithDetailScreen("Good mood practice"),
+    buildMenuItemWithDetailScreen("Pain Soothing"),
+    buildMenuItemWithDetailScreen("Good Mood Practice"),
     buildMenuItemWithDetailScreen("Settings", <Settings />),
   ];
 

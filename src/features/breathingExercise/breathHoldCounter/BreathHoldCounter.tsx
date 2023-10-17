@@ -2,8 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import { IBreathHoldCounterProps } from "./IBreathHoldCounterProps";
 import styles from "./BreathHoldCounter.module.css";
 import { style } from "../../../utils/style";
-import { SoundPlayer } from "../../../components/soundPlayer/soundPlayer/SoundPlayer";
-import { ISoundPlayer } from "../../../components/soundPlayer/soundPlayer/ISoundPlayer";
+import { SoundPlayer } from "../../../services/soundPlayer/soundPlayer/SoundPlayer";
+import { ISoundPlayer } from "../../../services/soundPlayer/soundPlayer/ISoundPlayer";
 import { click } from "@testing-library/user-event/dist/click";
 
 export const BreathHoldCounter: React.FC<IBreathHoldCounterProps> = (props) => {
