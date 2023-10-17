@@ -1,4 +1,4 @@
-import { BreathDurationSetting } from "../features/breathDurationSetting/BreathDurationSetting";
+import { BreathDurationSetting } from "../breathDurationSetting/BreathDurationSetting";
 import { ISettingsProps } from "./ISettingsProps";
 import styles from "./Settings.module.css";
 

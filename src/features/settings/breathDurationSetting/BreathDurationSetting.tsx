@@ -1,5 +1,5 @@
 import { Slider } from "@mui/material";
-import { Setting } from "../../setting/Setting";
+import { Setting } from "../core/setting/Setting";
 import styles from "./BreathDurationSetting.module.css";
 import { useBreathDurationLocalStorage } from "./useBreathDurationLocalStorage";
 

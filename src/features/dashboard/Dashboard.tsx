@@ -1,11 +1,11 @@
 import { ReactNode, useState } from "react";
 import { BreathingExercise } from "../breathingExercise/breathingExercise/BreathingExercise";
-import { IMenuItem } from "../components/menu/IMenuItem";
-import { Menu } from "../components/menu/Menu";
+import { IMenuItem } from "../core/menu/IMenuItem";
+import { Menu } from "../core/menu/Menu";
 import { IBreathingExerciseProps } from "../breathingExercise/breathingExercise/IBreathingExerciseProps";
 import { Settings } from "../settings/settings/Settings";
-import { useBreathDurationLocalStorage } from "../settings/features/breathDurationSetting/useBreathDurationLocalStorage";
-import { DetailScreen } from "../components/detailScreen/DetailScreen";
+import { useBreathDurationLocalStorage } from "../settings/breathDurationSetting/useBreathDurationLocalStorage";
+import { DetailScreen } from "../core/detailScreen/DetailScreen";
 
 const debugExerciseProps: IBreathingExerciseProps = {
   // breathDurationInMillis: 3200,
