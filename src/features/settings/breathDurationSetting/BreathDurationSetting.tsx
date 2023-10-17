@@ -8,7 +8,7 @@ export const BreathDurationSetting: React.FC = () => {
     useBreathDurationLocalStorage();
 
   return (
-    <Setting title="Your breathing time in seconds (in&out)">
+    <Setting title="Your Breathing Time in Seconds (in&out)">
       <div className={styles.breathDurationSetting}>
         <div className={styles.sliderWrapper}>
           <Slider

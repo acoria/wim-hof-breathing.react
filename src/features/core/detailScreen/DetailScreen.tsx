@@ -6,14 +6,14 @@ import { IconType } from "../../../components/icons/IconType";
 
 export const DetailScreen: React.FC<IDetailScreenProps> = (props) => {
   return (
-    <div className={styles.detailScreen}>
+    <div>
       <Icon
         iconType={IconType.HOME}
         className={styles.homeIcon}
         onClick={props.onHomeButtonClick}
       />
       <ScreenTitle title={props.title} />
-      <div className={styles.children}>{props.children}</div>
+      <div>{props.children}</div>
     </div>
   );
 };
