@@ -1,8 +1,7 @@
 .setting {
-  background-color: var(--secondary);
+  background-color: var(--secondary-translucent);
   padding: 0.2rem 0.5rem;
-  box-shadow: -2px 2px 5px var(--primary);
-  opacity: 0.8;
+  box-shadow: var(--box-shadow);
 }
 
 .title {

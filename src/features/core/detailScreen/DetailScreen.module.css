@@ -6,3 +6,12 @@
   color: var(--primary);
   z-index: 100;
 }
+
+.titleWrapper {
+  position: relative;
+}
+
+.infoScreen {
+  position: relative;
+  z-index: 100;
+}

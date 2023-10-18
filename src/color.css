@@ -1,5 +1,7 @@
 :root {
   --primary: #42a2bf;
   --secondary: black;
+  --secondary-translucent: rgba(0, 0, 0, 0.8);
   --accent: #c7e4ef;
+  --box-shadow: -2px 3px 5px var(--primary);
 }

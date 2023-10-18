@@ -74,7 +74,7 @@ export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
         onStopBreathing={stopBreathing}
         isBreathingIn={isBreathingIn}
         width={"12rem"}
-        className={styles.playCircle}
+        className={styles.breathingCircle}
       />
     </>
   );

@@ -1,0 +1,50 @@
+.infoScreen {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: end;
+  position: relative;
+}
+
+.infoIcon {
+  width: 1.5rem;
+  aspect-ratio: 1/1;
+  background-color: var(--secondary);
+  color: var(--primary);
+  box-shadow: var(--box-shadow);
+}
+
+.infoIconInvisible {
+  opacity: 0;
+}
+
+.infoArea {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+}
+
+.infoAreaOutOfView {
+  transform: translateX(100%);
+  transition: transform 1s ease-in;
+}
+
+.infoAreaComeIntoView {
+  transform: translateX(0);
+  transition: transform 1s ease-out;
+}
+
+.infoDetails {
+  width: calc(100vw - 10rem);
+  background-color: rgba(128, 128, 128, 0.8);
+  padding: 0 2rem;
+}
+
+.infoDetails h1 {
+  margin: 0;
+}
