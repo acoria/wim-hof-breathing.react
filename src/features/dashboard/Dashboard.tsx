@@ -67,6 +67,7 @@ export const Dashboard: React.FC = () => {
         />
       )}
       {selectedItem && selectedItem}
+      
     </div>
   );
 };

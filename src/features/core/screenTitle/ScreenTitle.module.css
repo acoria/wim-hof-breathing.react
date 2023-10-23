@@ -4,14 +4,23 @@
   justify-content: end;
 }
 
-.screenTitle h1 {
+.screenTitleBar {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.3rem;
   background-color: var(--secondary-translucent);
   box-shadow: var(--box-shadow);
   color: var(--primary);
+  padding: 0.7rem;
+}
+
+.screenTitleBarText {
+  margin: 0;
   font-variant: small-caps;
   font-size: large;
-  justify-self: end;
-  margin: 0;
-  margin-top: 1.5rem;
-  padding: 0.7rem 1rem;
+}
+
+.icon {
+  font-size: medium;
+  cursor: pointer;
 }

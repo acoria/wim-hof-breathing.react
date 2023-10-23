@@ -7,13 +7,15 @@ import styles from "./InfoScreen.module.css";
 import { CSSTransition } from "react-transition-group";
 
 export const InfoScreen: React.FC<IInfoScreenProps> = (props) => {
-  const [showInfoArea, setShowInfoArea] = useState(false);
+  const [showInfoArea, setShowInfoArea] = useState(props.showInfoArea);
 
   return (
     <div className={style(styles.infoScreen, props.className)}>
       <Icon
         iconType={IconType.INFO}
-        className={`${styles.infoIcon} ${showInfoArea && styles.infoIconInvisible}`}
+        className={`${styles.infoIcon} ${
+          showInfoArea && styles.infoIconInvisible
+        }`}
         onClick={() => setShowInfoArea(true)}
       />
       <CSSTransition

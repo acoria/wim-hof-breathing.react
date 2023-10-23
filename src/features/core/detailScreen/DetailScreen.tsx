@@ -4,8 +4,11 @@ import { ScreenTitle } from "../screenTitle/ScreenTitle";
 import { Icon } from "../../../components/icons/Icon";
 import { IconType } from "../../../components/icons/IconType";
 import { InfoScreen } from "../infoScreen/InfoScreen";
+import { useState } from "react";
 
 export const DetailScreen: React.FC<IDetailScreenProps> = (props) => {
+  const [showInfoArea, setShowInfoArea] = useState(false);
+
   return (
     <div>
       <Icon
@@ -13,10 +16,12 @@ export const DetailScreen: React.FC<IDetailScreenProps> = (props) => {
         className={styles.homeIcon}
         onClick={props.onHomeButtonClick}
       />
-      <div className={styles.titleWrapper}>
-        <ScreenTitle title={props.title} />
-        <InfoScreen className={styles.infoScreen} />
-      </div>
+      <ScreenTitle
+        title={props.title}
+        showInfoIcon
+        onInfoIconClick={() => setShowInfoArea(true)}
+      />
+      <InfoScreen className={styles.infoScreen} showInfoArea={showInfoArea} />
       <div>{props.children}</div>
     </div>
   );
