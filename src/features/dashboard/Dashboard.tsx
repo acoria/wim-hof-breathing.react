@@ -26,7 +26,8 @@ export const Dashboard: React.FC = () => {
 
   const buildMenuItemWithDetailScreen = (
     title: string,
-    children?: ReactNode | ReactNode[]
+    children?: ReactNode | ReactNode[],
+    infoArea?: ReactNode
   ): IMenuItem => {
     return {
       title: title,
@@ -34,6 +35,7 @@ export const Dashboard: React.FC = () => {
         <DetailScreen
           title={title}
           onHomeButtonClick={() => setSelectedItem(undefined)}
+          infoArea={infoArea}
         >
           {children}
         </DetailScreen>
@@ -43,14 +45,21 @@ export const Dashboard: React.FC = () => {
 
   const menuItems: IMenuItem[] = [
     buildMenuItemWithDetailScreen(
-      "Wim Hof Breathing",
+      "Breath like Wim Hof ",
       <BreathingExercise
         {...exerciseProps}
         // {...debugExerciseProps}
-      />
+      />,
+      <>
+        <h1>Test</h1>
+        <p>Some descriptive text</p>
+        <p>Some descriptive text</p>
+        <p>Some descriptive text</p>
+        <p>Some descriptive text</p>
+      </>
     ),
-    buildMenuItemWithDetailScreen("Pain Soothing"),
-    buildMenuItemWithDetailScreen("Good Mood Practice"),
+    buildMenuItemWithDetailScreen("Outch..sooth the pain"),
+    buildMenuItemWithDetailScreen("Happy Mood!"),
     buildMenuItemWithDetailScreen("Settings", <Settings />),
   ];
 
@@ -67,7 +76,6 @@ export const Dashboard: React.FC = () => {
         />
       )}
       {selectedItem && selectedItem}
-      
     </div>
   );
 };

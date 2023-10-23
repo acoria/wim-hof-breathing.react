@@ -50,16 +50,20 @@ export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
     }
   }, [isBreathing]);
 
+  const playClickWrapper = (block: () => void) => {
+    clickPlayer.play();
+    block();
+  };
+
   return (
     <>
       <div className={styles.breathingExerciseCounter}>
         <BreathingExerciseCounter
           maxNumberOfBreathingExercises={4}
           numberOfBreathingExercises={numberOfFinishedExercises}
-          onReset={() => {
-            clickPlayer.play();
-            updateNumberOfFinishedExercises(0);
-          }}
+          onReset={() =>
+            playClickWrapper(() => updateNumberOfFinishedExercises(0))
+          }
         />
       </div>
       {isBreathing && <h1 className={styles.breathCounter}>{breathCount}</h1>}
@@ -70,8 +74,8 @@ export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
         breathDurationInMillis={props.breathDurationInMillis}
         delayBeforeStartingAnimationsInMillis={props.startDelayInMillis}
         isBreathing={isBreathing}
-        onStartBreathing={startBreathing}
-        onStopBreathing={stopBreathing}
+        onStartBreathing={() => playClickWrapper(startBreathing)}
+        onStopBreathing={() => playClickWrapper(stopBreathing)}
         isBreathingIn={isBreathingIn}
         width={"12rem"}
         className={styles.breathingCircle}

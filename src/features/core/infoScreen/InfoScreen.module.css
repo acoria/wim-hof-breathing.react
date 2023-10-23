@@ -10,7 +10,7 @@
 .infoIcon {
   width: 1.5rem;
   aspect-ratio: 1/1;
-  background-color: var(--secondary);
+  background-color: var(--secondary-translucent);
   color: var(--primary);
   box-shadow: var(--box-shadow);
 }
@@ -36,13 +36,10 @@
 }
 
 .infoDetails {
-  width: calc(100vw - 10rem);
+  width: calc(100vw - 8rem);
   background-color: var(--primary-translucent);
   color: var(--secondary);
-  /* background-color: rgba(128, 128, 128, 0.8); */
+  /* background-color: var(--secondary-translucent);
+  color: var(--primary); */
   padding: 0 2rem;
-}
-
-.infoDetails h1 {
-  margin: 0;
 }

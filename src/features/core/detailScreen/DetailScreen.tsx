@@ -18,23 +18,17 @@ export const DetailScreen: React.FC<IDetailScreenProps> = (props) => {
       />
       <ScreenTitle
         title={props.title}
-        showInfoIcon
+        showInfoIcon={props.infoArea !== undefined}
         onInfoIconClick={() => setShowInfoArea((previous) => !previous)}
       />
-      <InfoScreen
-        className={styles.infoScreen}
-        showInfoArea={showInfoArea}
-        onInfoAreaDisplayChange={(visible) => setShowInfoArea(visible)}
-        children={
-          <>
-            <h1>Test</h1>
-            <p>Some descriptive text</p>
-            <p>Some descriptive text</p>
-            <p>Some descriptive text</p>
-            <p>Some descriptive text</p>
-          </>
-        }
-      />
+      {props.infoArea && (
+        <InfoScreen
+          className={styles.infoScreen}
+          showInfoArea={showInfoArea}
+          onInfoAreaDisplayChange={(visible) => setShowInfoArea(visible)}
+          children={props.infoArea}
+        />
+      )}
       <div>{props.children}</div>
     </div>
   );
