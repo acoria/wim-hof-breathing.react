@@ -7,10 +7,14 @@ import { Settings } from "../settings/settings/Settings";
 import { useBreathDurationLocalStorage } from "../settings/breathDurationSetting/useBreathDurationLocalStorage";
 import { DetailScreen } from "../core/detailScreen/DetailScreen";
 import { InfoArea } from "../core/infoArea/InfoArea";
-import { WimHofBreathingInfo } from "../exercises/WimHofBreathingInfo";
+import { SimplifiedWimHofBreathingInfo } from "../exercises/SimplifiedWimHofBreathingInfo";
 import { texts } from "../../i18n/texts";
 import { WarmingUpInfo } from "../exercises/WarmingUpInfo";
 import { InfoDetailScreen } from "../core/infoDetailScreen/InfoDetailScreen";
+import { IInfoAreaProps } from "../core/infoArea/IInfoAreaProps";
+import { WimHofBreathingInfo } from "../exercises/WimHofBreathingInfo";
+import { InteroceptionBreathingInfo } from "../exercises/InteroceptionBreathingInfo";
+import { InteroceptionHeartBeatInfo } from "../exercises/InteroceptionHeartBeatInfo";
 
 const debugExerciseProps: IBreathingExerciseProps = {
   breathDurationInMillis: 1000,
@@ -47,21 +51,40 @@ export const Dashboard: React.FC = () => {
     };
   };
 
+  const buildMenuItemWithInfoDetailScreen = (
+    title: string,
+    infoAreaProps: IInfoAreaProps
+  ): IMenuItem => {
+    return buildMenuItemWithDetailScreen(
+      `${title} - ${texts.general.info}`,
+      <InfoDetailScreen {...infoAreaProps} />
+    );
+  };
+
   const menuItems: IMenuItem[] = [
     buildMenuItemWithDetailScreen(
-      "Breath like Wim Hof ",
+      texts.wimHofBreathing.title,
       <BreathingExercise
         {...exerciseProps}
         // {...debugExerciseProps}
       />,
-      <InfoArea {...WimHofBreathingInfo} />
+      <InfoArea {...SimplifiedWimHofBreathingInfo} />
     ),
-    buildMenuItemWithDetailScreen("Outch..sooth the pain"),
-    buildMenuItemWithDetailScreen("Happy Mood!"),
-    buildMenuItemWithDetailScreen("Settings", <Settings />),
-    buildMenuItemWithDetailScreen(
-      texts.warmingUp.title,
-      <InfoDetailScreen {...WarmingUpInfo} />
+    buildMenuItemWithDetailScreen(texts.painSoothing.title),
+    buildMenuItemWithDetailScreen(texts.happyMood.title),
+    buildMenuItemWithDetailScreen(texts.settings.title, <Settings />),
+    buildMenuItemWithInfoDetailScreen(texts.warmingUp.title, WarmingUpInfo),
+    buildMenuItemWithInfoDetailScreen(
+      texts.wimHofBreathing.title,
+      WimHofBreathingInfo
+    ),
+    buildMenuItemWithInfoDetailScreen(
+      texts.interoceptionBreathing.title,
+      InteroceptionBreathingInfo
+    ),
+    buildMenuItemWithInfoDetailScreen(
+      texts.interoceptionHeartBeat.title,
+      InteroceptionHeartBeatInfo
     ),
   ];
 

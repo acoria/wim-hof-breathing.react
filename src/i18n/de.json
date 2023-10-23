@@ -1,4 +1,7 @@
 {
+    "general": {
+        "info": "Info"
+    },
     "wimHofBreathing": {
         "title": "Atme wie Wim Hof",
         "description": "Stimme dich auf Achtsamkeit ein, bevor du dich in dieser Atemtechnik übst. Hör auf deinen Körper und lerne aus den physischen und geistigen Signalen, die du während der Übungen empfängst.",
@@ -7,8 +10,7 @@
         "step3": "Atemretention: Wenn du am Ende des letzten Atemzuges angelangt bist, atmest du noch einmal tief ein, ganz ohne Anstrengung. Dann lass los und atme aus. Halte den Atem an, bis du den Drang empfindest, neuen Atem zu schöpfen.",
         "step4": "Recovery-Atem: Sobald der Drang zum Einzuatmen unwiderstehlich wird, holst du einmal tief Luft und hältst sie bis zu 15s lang an.",
         "step5": "Lass den Atem los, starte eine neue Runde. Tief einatmen, ausatmen. Den Zyklus wiederholst du drei- bis viermal.",
-        "additionalInfo": "Nimm dir im Anschluss an diese Atemübung Zeit, das Gefühl zu genießen. Mit zunehmender Praxis wird die Übung mehr und mehr zu einer richtiggehenden Meditation.",
-        "modification": "Hast du dich erst einmal mit der Basis-Atemübung vertraut gemacht, kannst du sie wie folgt ergänzen: Versuch im zweiten Durchgang beim Recovery-Atem den Atem in den Kopf zu pressen. Das geht, indem du den Beckenboden anspannst und diese Spannung in den Oberkörper und von dort aus bis hoch in den Kopf lenkst. Der Rest des Körpers bleibt ganz entspannt. Im Kopf sollte ein gewisser Druck spürbar sein. Beim Ausatmen lösst du alles los und enspannst."
+        "additionalInfo": "Nimm dir im Anschluss an diese Atemübung Zeit, das Gefühl zu genießen. Mit zunehmender Praxis wird die Übung mehr und mehr zu einer richtiggehenden Meditation. Hast du dich erst einmal mit der Basis-Atemübung vertraut gemacht, kannst du sie wie folgt ergänzen: Versuch im zweiten Durchgang beim Recovery-Atem den Atem in den Kopf zu pressen. Das geht, indem du den Beckenboden anspannst und diese Spannung in den Oberkörper und von dort aus bis hoch in den Kopf lenkst. Der Rest des Körpers bleibt ganz entspannt. Im Kopf sollte ein gewisser Druck spürbar sein. Beim Ausatmen lösst du alles los und enspannst."
     },
     "warmingUp": {
         "title": "Aufwärmen",
@@ -24,7 +26,7 @@
         "additionalInfo": "Mit etwas Übung stellt sich bei dir das Gefühl ein, dass vom Hals ausgehend Wärme durch den ganzen Körper fließt. Jeder Mensch ist anders, aber mit der Zeit wirst du spüren, wie Wärme aus deinem Inneren kommt."
     },
     "interoceptionBreathing": {
-        "title": "Interozeption mithilfe der Atmung",
+        "title": "Interozeption (Atmung)",
         "description": "Möchtest du deine Interozeption trainieren und deinen interzeptiven Fokus schärfen? Solltest du bereits regelmäßig die Basis-Atemübung machen, bist du schon auf einem guten Weg dorthin. Mit der folgenden Visualsierung gelangst du auf die nächste Stufe.",
         "step1": "Nimm im Sitzen oder Liegen an einem bequemen Ort Platz und schließe die Augen.",
         "step2": "Atme normal, aber bleib fokussiert auf das Atmen. Intensiv einatmen und ausatmen.",
@@ -36,7 +38,7 @@
         "step8": "Führe die Übung noch ein paar Minuten lang fort."
     },
     "interoceptionHeartBeat": {
-        "title": "Interozeption des Herzschlags",
+        "title": "Interozeption (Herzschlag)",
         "description": "In dieser Übung stellen wir bewusst eine Verbindung mit dem Herz-Kreislauf-System her. Da der Herzschlag eine unwillkürliche Aktivität des Körpers ist, achten die wenigsten darauf oder auf den Blutkreislauf, durch den das Herz regelmäßig Blut in den Körper pumpt. Lenken wir aber den interozeptiven Fokus darauf, können wir in stressigen Zeiten unsere Herzfrequenz senken, was nicht nur die Belastung ein wenig reduziert, sondern auch die Sauerstoff- und Nährstoffversorgung der Zellen verbessert.",
         "step1": "Setz oder leg dich an einen bequemen Ort, an dem du nicht gestört werden kannst.",
         "step2": "Entspann dich",
@@ -46,5 +48,15 @@
         "step6": "Verbinde dich anschließend wieder mit deinem Herzschlag und versuche, den Atem neuerlich mit ihm zu synchronisieren.",
         "step7": "Unternimm eine kleine Reise durch deinen ganzen Körper und versuch, den Herzschlag an verschiedenen Stellen zu spüren. Fokussiere dich auf deine Hand, und spür den Herzschlag dort. Wenn du dich auf deine Füße fokussierst, spür, wie das Blut von deinen Fußgelenken in die Zehen fließt.",
         "additionalInfo": "Mit dieser Übung verbindest du Geist und Körper. Das ist der Fokus der Interozeption. Ein paar Minuten täglich genügen, um diese Verbindung zu intensivieren und in den Genuß ihrer Vorteile zu kommen."
+    },
+    "painSoothing": {
+        "title": "Autsch..stille den Schmerz"
+    },
+    "happyMood": {
+        "title": "Happy Mood!"
+    },
+    "settings": {
+        "title": "Einstellungen",
+        "breathingTime": "Deine Zeit um ein- und auszuatmen"
     }
 }

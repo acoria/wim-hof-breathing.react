@@ -2,13 +2,14 @@ import { Slider } from "@mui/material";
 import { Setting } from "../core/setting/Setting";
 import styles from "./BreathDurationSetting.module.css";
 import { useBreathDurationLocalStorage } from "./useBreathDurationLocalStorage";
+import { texts } from "../../../i18n/texts";
 
 export const BreathDurationSetting: React.FC = () => {
   const [breathingDuration, updateBreathingDuration] =
     useBreathDurationLocalStorage();
 
   return (
-    <Setting title="Your Breathing Time in Seconds (in&out)">
+    <Setting title={texts.settings.breathingTime}>
       <div className={styles.breathDurationSetting}>
         <div className={styles.sliderWrapper}>
           <Slider
