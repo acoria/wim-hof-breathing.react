@@ -6,9 +6,10 @@ import { IBreathingExerciseProps } from "../breathingExercise/breathingExercise/
 import { Settings } from "../settings/settings/Settings";
 import { useBreathDurationLocalStorage } from "../settings/breathDurationSetting/useBreathDurationLocalStorage";
 import { DetailScreen } from "../core/detailScreen/DetailScreen";
+import { InfoArea } from "../core/infoArea/InfoArea";
+import { WimHofBreathingInfo } from "../exercises/WimHofBreathingInfo";
 
 const debugExerciseProps: IBreathingExerciseProps = {
-  // breathDurationInMillis: 3200,
   breathDurationInMillis: 1000,
   numberOfBreaths: 2,
   startDelayInMillis: 1000,
@@ -50,13 +51,7 @@ export const Dashboard: React.FC = () => {
         {...exerciseProps}
         // {...debugExerciseProps}
       />,
-      <>
-        <h1>Test</h1>
-        <p>Some descriptive text</p>
-        <p>Some descriptive text</p>
-        <p>Some descriptive text</p>
-        <p>Some descriptive text</p>
-      </>
+      <InfoArea {...WimHofBreathingInfo} />
     ),
     buildMenuItemWithDetailScreen("Outch..sooth the pain"),
     buildMenuItemWithDetailScreen("Happy Mood!"),
