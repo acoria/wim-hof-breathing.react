@@ -1,5 +1,4 @@
-.infoScreen {
-  color: white;
+.infoPopup {
   display: flex;
   flex-direction: row;
   align-items: end;

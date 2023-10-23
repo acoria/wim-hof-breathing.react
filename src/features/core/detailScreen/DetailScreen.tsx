@@ -3,7 +3,7 @@ import styles from "./DetailScreen.module.css";
 import { ScreenTitle } from "../screenTitle/ScreenTitle";
 import { Icon } from "../../../components/icons/Icon";
 import { IconType } from "../../../components/icons/IconType";
-import { InfoScreen } from "../infoScreen/InfoScreen";
+import { InfoPopup } from "../infoPopup/InfoPopup";
 import { useState } from "react";
 
 export const DetailScreen: React.FC<IDetailScreenProps> = (props) => {
@@ -22,7 +22,7 @@ export const DetailScreen: React.FC<IDetailScreenProps> = (props) => {
         onInfoIconClick={() => setShowInfoArea((previous) => !previous)}
       />
       {props.infoArea && (
-        <InfoScreen
+        <InfoPopup
           className={styles.infoScreen}
           showInfoArea={showInfoArea}
           onInfoAreaDisplayChange={(visible) => setShowInfoArea(visible)}

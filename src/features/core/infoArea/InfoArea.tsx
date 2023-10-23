@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { IInfoAreaProps } from "./IInfoAreaProps";
 import styles from "./InfoArea.module.css";
+import { style } from "../../../utils/style";
 
 export const InfoArea: React.FC<IInfoAreaProps> = (props) => {
   const buildSteps = (): ReactNode[] | undefined => {
@@ -15,9 +16,10 @@ export const InfoArea: React.FC<IInfoAreaProps> = (props) => {
   };
 
   return (
-    <div className={styles.infoArea}>
-      {props.description && <p className={styles.description}>{props.description}</p>}
+    <div className={style(styles.infoArea, props.className)}>
+      {props.description && <p>{props.description}</p>}
       {props.steps && <div className={styles.steps}>{buildSteps()}</div>}
+      {props.additionalInfo && <p>{props.additionalInfo}</p>}
     </div>
   );
 };

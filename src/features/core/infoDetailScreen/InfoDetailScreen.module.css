@@ -1,0 +1,12 @@
+.infoDetailScreen {
+  background-color: var(--accent-translucent);
+  padding: 0.5rem;
+  padding-left: 1rem;
+  margin: 2rem 0 1rem 1rem;
+  font-weight: 500;
+  box-shadow: var(--box-shadow);
+}
+
+.infoDetailScreen p{
+    font-weight: 400;
+}

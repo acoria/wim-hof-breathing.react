@@ -1,13 +1,11 @@
-.infoArea{
-    padding-bottom: 1rem;
-    font-size: small;
+.infoArea {
+  padding-bottom: 1rem;
+  font-size: small;
 }
 
-.description{
-}
-
-.steps{
-    display: grid;
-    grid-template-columns: 1rem auto;
-    grid-row-gap: 0.5rem;
+.steps {
+  display: grid;
+  grid-template-columns: 1rem auto;
+  grid-row-gap: 0.5rem;
+  margin-left: 0.5rem;
 }

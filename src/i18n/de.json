@@ -1,0 +1,50 @@
+{
+    "wimHofBreathing": {
+        "title": "Atme wie Wim Hof",
+        "description": "Stimme dich auf Achtsamkeit ein, bevor du dich in dieser Atemtechnik übst. Hör auf deinen Körper und lerne aus den physischen und geistigen Signalen, die du während der Übungen empfängst.",
+        "step1": "Nimm in einer ruhigen Umgebung eine Meditationshaltung ein oder lege dich hin, so dass du frei atmen kannst",
+        "step2": "Schließ die Augen und versuch, den Kopf freizubekommen. Verbinde dich mit deiner Atmung, sei dir ihrer bewusst. Atme 40-mal tief durch den Mund oder Nase ein. Fülle Bauch, Brust, deinen ganzen Körper bis under die Haarwurzeln mit Luft. Erzwinge die Ausatmung nicht. Entspanne dich und atme einfach locker aus. Einatmen, ausatmen.",
+        "step3": "Atemretention: Wenn du am Ende des letzten Atemzuges angelangt bist, atmest du noch einmal tief ein, ganz ohne Anstrengung. Dann lass los und atme aus. Halte den Atem an, bis du den Drang empfindest, neuen Atem zu schöpfen.",
+        "step4": "Recovery-Atem: Sobald der Drang zum Einzuatmen unwiderstehlich wird, holst du einmal tief Luft und hältst sie bis zu 15s lang an.",
+        "step5": "Lass den Atem los, starte eine neue Runde. Tief einatmen, ausatmen. Den Zyklus wiederholst du drei- bis viermal.",
+        "additionalInfo": "Nimm dir im Anschluss an diese Atemübung Zeit, das Gefühl zu genießen. Mit zunehmender Praxis wird die Übung mehr und mehr zu einer richtiggehenden Meditation.",
+        "modification": "Hast du dich erst einmal mit der Basis-Atemübung vertraut gemacht, kannst du sie wie folgt ergänzen: Versuch im zweiten Durchgang beim Recovery-Atem den Atem in den Kopf zu pressen. Das geht, indem du den Beckenboden anspannst und diese Spannung in den Oberkörper und von dort aus bis hoch in den Kopf lenkst. Der Rest des Körpers bleibt ganz entspannt. Im Kopf sollte ein gewisser Druck spürbar sein. Beim Ausatmen lösst du alles los und enspannst."
+    },
+    "warmingUp": {
+        "title": "Aufwärmen",
+        "description": "Wärst du gerne in der Lage, dich jederzeit aufzuwärmen, auch wenn keine äußere Heizquelle vorhanden ist? Mithilfe der folgenden Übung kann Wärme erzeugt werden: Sie aktiviert das braune Fettgewebe, das Energie verbraucht und sie in Form von Wärme abgibt, und bringt die Zwischenrippenmuskeln in Bewegung.",
+        "step1": "Setz dich hin.",
+        "step2": "Atme fünf- bis sechsmal langsam tief ein und lass die Luft ganz von selbst wieder ausströmen.",
+        "step3": "Atme tief und vollständig ein.",
+        "step4": "Entspann dich beim Ausatmen.",
+        "step5": "Atme tief und vollständig ein.",
+        "step6": "Halte kurz - höchstens fünf Sekunden lang - den Atem an.",
+        "step7": "Spanne die oberen Rücken sowie die Brustmuskulatur an, während du den Atem anhältst. Kopf und Kiefer bleiben entspannt.",
+        "step8": "Lass los.",
+        "additionalInfo": "Mit etwas Übung stellt sich bei dir das Gefühl ein, dass vom Hals ausgehend Wärme durch den ganzen Körper fließt. Jeder Mensch ist anders, aber mit der Zeit wirst du spüren, wie Wärme aus deinem Inneren kommt."
+    },
+    "interoceptionBreathing": {
+        "title": "Interozeption mithilfe der Atmung",
+        "description": "Möchtest du deine Interozeption trainieren und deinen interzeptiven Fokus schärfen? Solltest du bereits regelmäßig die Basis-Atemübung machen, bist du schon auf einem guten Weg dorthin. Mit der folgenden Visualsierung gelangst du auf die nächste Stufe.",
+        "step1": "Nimm im Sitzen oder Liegen an einem bequemen Ort Platz und schließe die Augen.",
+        "step2": "Atme normal, aber bleib fokussiert auf das Atmen. Intensiv einatmen und ausatmen.",
+        "step3": "Atme jetzt bewusst einmal durch die Nase ein und durch den Mund aus. Versuch aber nichts zu erzwingen.",
+        "step4": "Visualisiere deine Lunge und nimm bewusst wahr, wie der Sauerstoff in sie hineinfließt. Und dies ist auch schon der Anfang der Interozeption.",
+        "step5": "Hol noch einige weitere Male Luft. Atme durch die Nase ein, durch den Mund aus. Ganz locker und entspannt.",
+        "step6": "Visualisiere nach ein paar weiteren Atemzügen die Prozesse des Gasaustausches in deinem Körper. Stell dir bildhaft vor, wie der Sauerstoff aus deiner Lunge über die Kapillaren ins Blut geht und visualisiere auch die Ausscheidung des Kohlendioxids beim Ausatmen.",
+        "step7": "Sobald du bemerkst, dass dein Geist auf Wanderschaft geht, fokussierst du dich einfach wieder auf die Atmung. So wirst stu mit der Zeit immer achtsamer, lernst, deinen Geist besser zu steuern und stehst nicht mehr so stark unter der Herrschaft des Geistes.",
+        "step8": "Führe die Übung noch ein paar Minuten lang fort."
+    },
+    "interoceptionHeartBeat": {
+        "title": "Interozeption des Herzschlags",
+        "description": "In dieser Übung stellen wir bewusst eine Verbindung mit dem Herz-Kreislauf-System her. Da der Herzschlag eine unwillkürliche Aktivität des Körpers ist, achten die wenigsten darauf oder auf den Blutkreislauf, durch den das Herz regelmäßig Blut in den Körper pumpt. Lenken wir aber den interozeptiven Fokus darauf, können wir in stressigen Zeiten unsere Herzfrequenz senken, was nicht nur die Belastung ein wenig reduziert, sondern auch die Sauerstoff- und Nährstoffversorgung der Zellen verbessert.",
+        "step1": "Setz oder leg dich an einen bequemen Ort, an dem du nicht gestört werden kannst.",
+        "step2": "Entspann dich",
+        "step3": "Erspüre und visualisiere deinen Herzschlag",
+        "step4": "Verbinde dich mit deinem Herzschlag und versuch, deinen Atem mit ihm zu synchronisieren, damit du ihn überall spüren kannst.",
+        "step5": "Visualisiere nun deinen Kreislauf. Stell dir bildhaft vor, wie mit jedem Einatmen sauerstoffreiches Blut von der Lunge ins Herz fließt, in jeden Teil deines Körpers, durch ein Netz von Blutgefäßen, deren Länge rund 100 000km beträgt, was in etwas dem Zweieinhalbfachen des Erdumfangs entspricht. Stell dir vor, wie das Blut Sauerstoff und Nährstoffe in deine Organe und Muskeln transportiert und Abfallstoffe, wie zum Beispiel Kohlendioxid an Leber, Nieren und Lunge weiterleitet.",
+        "step6": "Verbinde dich anschließend wieder mit deinem Herzschlag und versuche, den Atem neuerlich mit ihm zu synchronisieren.",
+        "step7": "Unternimm eine kleine Reise durch deinen ganzen Körper und versuch, den Herzschlag an verschiedenen Stellen zu spüren. Fokussiere dich auf deine Hand, und spür den Herzschlag dort. Wenn du dich auf deine Füße fokussierst, spür, wie das Blut von deinen Fußgelenken in die Zehen fließt.",
+        "additionalInfo": "Mit dieser Übung verbindest du Geist und Körper. Das ist der Fokus der Interozeption. Ein paar Minuten täglich genügen, um diese Verbindung zu intensivieren und in den Genuß ihrer Vorteile zu kommen."
+    }
+}

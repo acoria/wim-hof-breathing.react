@@ -8,6 +8,9 @@ import { useBreathDurationLocalStorage } from "../settings/breathDurationSetting
 import { DetailScreen } from "../core/detailScreen/DetailScreen";
 import { InfoArea } from "../core/infoArea/InfoArea";
 import { WimHofBreathingInfo } from "../exercises/WimHofBreathingInfo";
+import { texts } from "../../i18n/texts";
+import { WarmingUpInfo } from "../exercises/WarmingUpInfo";
+import { InfoDetailScreen } from "../core/infoDetailScreen/InfoDetailScreen";
 
 const debugExerciseProps: IBreathingExerciseProps = {
   breathDurationInMillis: 1000,
@@ -56,6 +59,10 @@ export const Dashboard: React.FC = () => {
     buildMenuItemWithDetailScreen("Outch..sooth the pain"),
     buildMenuItemWithDetailScreen("Happy Mood!"),
     buildMenuItemWithDetailScreen("Settings", <Settings />),
+    buildMenuItemWithDetailScreen(
+      texts.warmingUp.title,
+      <InfoDetailScreen {...WarmingUpInfo} />
+    ),
   ];
 
   const menuItemSelectedHandler = (component: ReactNode) => {

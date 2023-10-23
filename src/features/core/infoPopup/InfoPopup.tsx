@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { Icon } from "../../../components/icons/Icon";
 import { IconType } from "../../../components/icons/IconType";
 import { style } from "../../../utils/style";
-import { IInfoScreenProps } from "./IInfoScreenProps";
-import styles from "./InfoScreen.module.css";
+import { IInfoScreenProps } from "./IInfoPopupProps";
+import styles from "./InfoPopup.module.css";
 import { CSSTransition } from "react-transition-group";
 
-export const InfoScreen: React.FC<IInfoScreenProps> = (props) => {
+export const InfoPopup: React.FC<IInfoScreenProps> = (props) => {
   const [showInfoArea, setShowInfoArea] = useState(props.showInfoArea);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export const InfoScreen: React.FC<IInfoScreenProps> = (props) => {
   };
 
   return (
-    <div className={style(styles.infoScreen, props.className)}>
+    <div className={style(styles.infoPopup, props.className)}>
       <CSSTransition
         in={showInfoArea}
         timeout={{ enter: 500, exit: 0 }}
