@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Icon } from "../../../components/icons/Icon";
 import { IconType } from "../../../components/icons/IconType";
 import { style } from "../../../utils/style";
@@ -9,6 +9,17 @@ import { CSSTransition } from "react-transition-group";
 export const InfoScreen: React.FC<IInfoScreenProps> = (props) => {
   const [showInfoArea, setShowInfoArea] = useState(props.showInfoArea);
 
+  useEffect(() => {
+    if (props.showInfoArea) {
+      changeInfoAreaVisibility(props.showInfoArea);
+    }
+  }, [props.showInfoArea]);
+
+  const changeInfoAreaVisibility = (visible: boolean) => {
+    setShowInfoArea(visible);
+    props.onInfoAreaDisplayChange?.(visible);
+  };
+
   return (
     <div className={style(styles.infoScreen, props.className)}>
       <Icon
@@ -16,7 +27,7 @@ export const InfoScreen: React.FC<IInfoScreenProps> = (props) => {
         className={`${styles.infoIcon} ${
           showInfoArea && styles.infoIconInvisible
         }`}
-        onClick={() => setShowInfoArea(true)}
+        onClick={() => changeInfoAreaVisibility(true)}
       />
       <CSSTransition
         in={showInfoArea}
@@ -34,7 +45,7 @@ export const InfoScreen: React.FC<IInfoScreenProps> = (props) => {
           <Icon
             iconType={IconType.INFO}
             className={styles.infoIcon}
-            onClick={() => setShowInfoArea(false)}
+            onClick={() => changeInfoAreaVisibility(false)}
           />
           <div className={styles.infoDetails}>
             <h1>Test</h1>
