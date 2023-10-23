@@ -1,8 +1,8 @@
 :root {
   --primary: #42a2bf;
-  --primary-translucent: rgba(66, 162, 191, 0.95);
   --secondary: black;
   --secondary-translucent: rgba(0, 0, 0, 0.8);
-  --accent: #c7e4ef;
+  --accent: #c7e4ef;  
+  --accent-translucent: rgba(199, 228, 239, 0.95);
   --box-shadow: -2px 3px 5px var(--primary);
 }

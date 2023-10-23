@@ -10,8 +10,8 @@
 .infoIcon {
   width: 1.5rem;
   aspect-ratio: 1/1;
-  background-color: var(--secondary-translucent);
-  color: var(--primary);
+  background-color: var(--accent-translucent);
+  color: var(--secondary);
   box-shadow: var(--box-shadow);
 }
 
@@ -37,9 +37,7 @@
 
 .infoDetails {
   width: calc(100vw - 8rem);
-  background-color: var(--primary-translucent);
+  background-color: var(--accent-translucent);
   color: var(--secondary);
-  /* background-color: var(--secondary-translucent);
-  color: var(--primary); */
   padding: 0 2rem;
 }
