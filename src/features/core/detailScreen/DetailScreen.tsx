@@ -25,6 +25,15 @@ export const DetailScreen: React.FC<IDetailScreenProps> = (props) => {
         className={styles.infoScreen}
         showInfoArea={showInfoArea}
         onInfoAreaDisplayChange={(visible) => setShowInfoArea(visible)}
+        children={
+          <>
+            <h1>Test</h1>
+            <p>Some descriptive text</p>
+            <p>Some descriptive text</p>
+            <p>Some descriptive text</p>
+            <p>Some descriptive text</p>
+          </>
+        }
       />
       <div>{props.children}</div>
     </div>

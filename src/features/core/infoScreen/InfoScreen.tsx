@@ -10,9 +10,10 @@ export const InfoScreen: React.FC<IInfoScreenProps> = (props) => {
   const [showInfoArea, setShowInfoArea] = useState(props.showInfoArea);
 
   useEffect(() => {
-    if (props.showInfoArea) {
+    if (props.showInfoArea !== undefined) {
       changeInfoAreaVisibility(props.showInfoArea);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.showInfoArea]);
 
   const changeInfoAreaVisibility = (visible: boolean) => {
@@ -22,16 +23,9 @@ export const InfoScreen: React.FC<IInfoScreenProps> = (props) => {
 
   return (
     <div className={style(styles.infoScreen, props.className)}>
-      <Icon
-        iconType={IconType.INFO}
-        className={`${styles.infoIcon} ${
-          showInfoArea && styles.infoIconInvisible
-        }`}
-        onClick={() => changeInfoAreaVisibility(true)}
-      />
       <CSSTransition
         in={showInfoArea}
-        timeout={{ enter: 1000, exit: 0 }}
+        timeout={{ enter: 500, exit: 0 }}
         classNames={{
           enter: styles.infoAreaOutOfView,
           enterActive: styles.infoAreaComeIntoView,
@@ -43,17 +37,11 @@ export const InfoScreen: React.FC<IInfoScreenProps> = (props) => {
       >
         <div className={styles.infoArea}>
           <Icon
-            iconType={IconType.INFO}
+            iconType={IconType.CLOSE}
             className={styles.infoIcon}
             onClick={() => changeInfoAreaVisibility(false)}
           />
-          <div className={styles.infoDetails}>
-            <h1>Test</h1>
-            <p>Some descriptive text</p>
-            <p>Some descriptive text</p>
-            <p>Some descriptive text</p>
-            <p>Some descriptive text</p>
-          </div>
+          <div className={styles.infoDetails}>{props.children}</div>
         </div>
       </CSSTransition>
     </div>
