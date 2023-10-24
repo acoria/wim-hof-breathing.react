@@ -2,7 +2,6 @@ import { BreathingExercise } from "../features/breathingExercise/breathingExerci
 import { IBreathingExerciseProps } from "../features/breathingExercise/breathingExercise/IBreathingExerciseProps";
 import { DetailScreen } from "../features/core/detailScreen/DetailScreen";
 import { InfoArea } from "../features/core/infoArea/InfoArea";
-import { WimHofBreathingInfo } from "../features/exercises/WimHofBreathingInfo";
 import { useBreathDurationLocalStorage } from "../features/settings/breathDurationSetting/useBreathDurationLocalStorage";
 import { texts } from "../i18n/texts";
 
@@ -27,7 +26,19 @@ export const WimHofBreathingPage = () => {
   return (
     <DetailScreen
       title={texts.wimHofBreathing.title}
-      infoPopupContent={<InfoArea {...WimHofBreathingInfo} />}
+      infoPopupContent={
+        <InfoArea
+          description={texts.wimHofBreathing.description}
+          steps={[
+            texts.wimHofBreathing.step1,
+            texts.wimHofBreathing.step2,
+            texts.wimHofBreathing.step3,
+            texts.wimHofBreathing.step4,
+            texts.wimHofBreathing.step5,
+          ]}
+          additionalInfo={texts.wimHofBreathing.additionalInfo}
+        />
+      }
     >
       <BreathingExercise
         {...exerciseProps}

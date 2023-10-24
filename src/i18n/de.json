@@ -50,10 +50,25 @@
         "additionalInfo": "Mit dieser Übung verbindest du Geist und Körper. Das ist der Fokus der Interozeption. Ein paar Minuten täglich genügen, um diese Verbindung zu intensivieren und in den Genuß ihrer Vorteile zu kommen."
     },
     "painSoothing": {
-        "title": "Autsch..stille den Schmerz"
+        "title": "Autsch..stille den Schmerz",
+        "description": "Meine Methode kann dir helfen, deine Schmerzen zu regulieren, indem du bewusst mithilfe der Atemtechnik auf deinen Körper und dein Schmerzempfinden einwirkst.",
+        "step1": "Setz oder leg dich bequem hin. Sobald du entspannt bist, richtest du deine Aufmerksamkeit auf die Stelle deines Körpers, an der du den Schmerz spürst. Dann holst du fünfmal tief und ruhig Luft.",
+        "step2": "Atme dann 20-mal tief ein. Lass nach jedem Atemzug los. Versuche nichts zu erzwingen.",
+        "step3": "Beim letzten Ausatmen stößt du die gesamte Luft aus, atmest ein weiteres Mal ein und hälst die Luft zehn Sekunden lang an.",
+        "step4": "In diesen zehn Sekunden konzentrierst du dich auf die schmerzende Stelle und presst die (angehaltene) Atemluft dorthin. Spann auch die Muskeln um den Schmerzbereich herum an.",
+        "step5": "Lass den Atem und mit ihm jegliche Anspannung los.",
+        "additionalInfo": "Stell dir deinen Schmerz wie ein Signal vor. Nimm dir vor, auf dieses Signal zu hören und stimme dich darauf ein. Das Schmerzsignal weist dich darauf hin, dass sich die Chemie in dieser Körperregion verändern muss oder gerade dabei ist, sich zu verändern. Positives Denken bzw. eine positive Einstellung kann das Schmerzempfinden beeinflussen. Der Sinn der Übung besteht nicht darin, den Schmerz zu unterdrücken, sondern die innere Chemie zu verändern, die den Schmerz überhaupt erst verursacht."
     },
     "happyMood": {
-        "title": "Happy Mood!"
+        "title": "Happy Mood!",
+        "description": "Diese Übung nutzt und trainiert die Gehirnkontrolle, um Stimmungsschwankungen oder Depressionen zu lindern. Eine vermehrte Sauerstoffversorgung des Gehirns verbessert das Wohlbefinden. In funktionellen MRT-Aufnahmen konnten wir das ganze Gehirn der Probanden tanzen sehen, wenn sie ihre Atemübungen machen. Du kannst diese Übung machen, wann immer dir danach ist. Sie ist besonders wirkungsvoll, wenn du melancholisch, schlecht gelaunt oder deprimiert bist. Erzwinge nichts - fühle es einfach.",
+        "step1": "Setz oder leg dich auf einen bequemen Platz, an dem du nicht gestört wirst.",
+        "step2": "Nimm jedes einzelne Körperteil wahr und entspanne es. Achte bewusst auf alles, was du spürst, siehst und hörst, ohne es zu bewerten. Sei einfach präsent.",
+        "step3": "Hol 20-mal tief Luft. Atme vollständig ein und lass los.",
+        "step4": "Beim letzten Atemzug atmest du tief ein, hälst die Luft an, drückst das Kinn an die Brust, spannst den Beckenboden an und leitest deine Spannung durch den gesamten Oberkörper bis in den Kopf.",
+        "step5": "Nimmst du irgendwo im Körper ein Unbehagen wahr, richtest du deine Aufmerksamkeit darauf und beobachtest es. Spann die Muskeln in dem Bereich an. Halte maximal zehn Sekunden lang den Atem an.",
+        "step6": "Lass mit dem Ausatmen auch alle Spannung los.",
+        "step7": "Wiederhole den gesamten Prozess zwei oder dreimal oder so lange, bis du dich besser fühlst."
     },
     "settings": {
         "title": "Einstellungen",
