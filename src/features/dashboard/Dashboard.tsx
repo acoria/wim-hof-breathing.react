@@ -19,6 +19,7 @@ export const Dashboard: React.FC = () => {
     { title: texts.warmingUp.title, path: "/warmingUp" },
     { title: texts.happyMood.title, path: "/happyMood" },
     { title: texts.painSoothing.title, path: "/painSoothing" },
+    { title: texts.powerBreathing.title, path: "/powerBreathing" },
     { title: texts.settings.title, path: "/settings" },
   ];
 

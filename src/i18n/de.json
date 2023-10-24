@@ -2,28 +2,16 @@
     "general": {
         "info": "Info"
     },
-    "wimHofBreathing": {
-        "title": "Atme wie Wim Hof",
-        "description": "Diese Übung bringt deinen Körper in chemische Balance. Führe die Übung einmal täglich auf leeren Magen durch, da sonst das sympathische und das parasympathische Nervensystem miteinander konkurrieren. Stimme dich auf Achtsamkeit ein, bevor du dich in dieser Atemtechnik übst. Hör auf deinen Körper und lerne aus den physischen und geistigen Signalen, die du während der Übungen empfängst.",
-        "step1": "Nimm in einer ruhigen Umgebung eine Meditationshaltung ein oder lege dich hin, so dass du frei atmen kannst",
-        "step2": "Schließ die Augen und versuch, den Kopf freizubekommen. Verbinde dich mit deiner Atmung, sei dir ihrer bewusst. Atme 40-mal tief durch den Mund oder Nase ein. Fülle Bauch, Brust, deinen ganzen Körper bis unter die Haarwurzeln mit Luft. Erzwinge die Ausatmung nicht. Entspanne dich und atme einfach locker aus. Einatmen, ausatmen.",
-        "step3": "Atemretention: Wenn du am Ende des letzten Atemzuges angelangt bist, atmest du noch einmal tief ein, ganz ohne Anstrengung. Dann lass los und atme aus. Halte den Atem an, bis du den Drang empfindest, neuen Atem zu schöpfen.",
-        "step4": "Recovery-Atem: Sobald der Drang zum Einzuatmen unwiderstehlich wird, holst du einmal tief Luft und hältst sie bis zu 15s lang an.",
-        "step5": "Lass den Atem los, starte eine neue Runde. Tief einatmen, ausatmen. Den Zyklus wiederholst du drei- bis viermal.",
-        "additionalInfo": "Nimm dir im Anschluss an diese Atemübung Zeit, das Gefühl zu genießen. Mit zunehmender Praxis wird die Übung mehr und mehr zu einer richtiggehenden Meditation. Hast du dich erst einmal mit der Basis-Atemübung vertraut gemacht, kannst du sie wie folgt ergänzen: Versuch im zweiten Durchgang beim Recovery-Atem den Atem in den Kopf zu pressen. Das geht, indem du den Beckenboden anspannst und diese Spannung in den Oberkörper und von dort aus bis hoch in den Kopf lenkst. Der Rest des Körpers bleibt ganz entspannt. Im Kopf sollte ein gewisser Druck spürbar sein. Beim Ausatmen lösst du alles los und enspannst."
-    },
-    "warmingUp": {
-        "title": "Aufwärmen",
-        "description": "Wärst du gerne in der Lage, dich jederzeit aufzuwärmen, auch wenn keine äußere Heizquelle vorhanden ist? Mithilfe der folgenden Übung kann Wärme erzeugt werden: Sie aktiviert das braune Fettgewebe, das Energie verbraucht und sie in Form von Wärme abgibt, und bringt die Zwischenrippenmuskeln in Bewegung.",
-        "step1": "Setz dich hin.",
-        "step2": "Atme fünf- bis sechsmal langsam tief ein und lass die Luft ganz von selbst wieder ausströmen.",
-        "step3": "Atme tief und vollständig ein.",
-        "step4": "Entspann dich beim Ausatmen.",
-        "step5": "Atme tief und vollständig ein.",
-        "step6": "Halte kurz - höchstens fünf Sekunden lang - den Atem an.",
-        "step7": "Spanne die oberen Rücken sowie die Brustmuskulatur an, während du den Atem anhältst. Kopf und Kiefer bleiben entspannt.",
-        "step8": "Lass los.",
-        "additionalInfo": "Mit etwas Übung stellt sich bei dir das Gefühl ein, dass vom Hals ausgehend Wärme durch den ganzen Körper fließt. Jeder Mensch ist anders, aber mit der Zeit wirst du spüren, wie Wärme aus deinem Inneren kommt."
+    "happyMood": {
+        "title": "Happy Mood!",
+        "description": "Diese Übung nutzt und trainiert die Gehirnkontrolle, um Stimmungsschwankungen oder Depressionen zu lindern. Eine vermehrte Sauerstoffversorgung des Gehirns verbessert das Wohlbefinden. In funktionellen MRT-Aufnahmen konnten wir das ganze Gehirn der Probanden tanzen sehen, wenn sie ihre Atemübungen machen. Du kannst diese Übung machen, wann immer dir danach ist. Sie ist besonders wirkungsvoll, wenn du melancholisch, schlecht gelaunt oder deprimiert bist. Erzwinge nichts - fühle es einfach.",
+        "step1": "Setz oder leg dich auf einen bequemen Platz, an dem du nicht gestört wirst.",
+        "step2": "Nimm jedes einzelne Körperteil wahr und entspanne es. Achte bewusst auf alles, was du spürst, siehst und hörst, ohne es zu bewerten. Sei einfach präsent.",
+        "step3": "Hol 20-mal tief Luft. Atme vollständig ein und lass los.",
+        "step4": "Beim letzten Atemzug atmest du tief ein, hälst die Luft an, drückst das Kinn an die Brust, spannst den Beckenboden an und leitest deine Spannung durch den gesamten Oberkörper bis in den Kopf.",
+        "step5": "Nimmst du irgendwo im Körper ein Unbehagen wahr, richtest du deine Aufmerksamkeit darauf und beobachtest es. Spann die Muskeln in dem Bereich an. Halte maximal zehn Sekunden lang den Atem an.",
+        "step6": "Lass mit dem Ausatmen auch alle Spannung los.",
+        "step7": "Wiederhole den gesamten Prozess zwei oder dreimal oder so lange, bis du dich besser fühlst."
     },
     "interoceptionBreathing": {
         "title": "Interozeption (Atmung)",
@@ -59,19 +47,41 @@
         "step5": "Lass den Atem und mit ihm jegliche Anspannung los.",
         "additionalInfo": "Stell dir deinen Schmerz wie ein Signal vor. Nimm dir vor, auf dieses Signal zu hören und stimme dich darauf ein. Das Schmerzsignal weist dich darauf hin, dass sich die Chemie in dieser Körperregion verändern muss oder gerade dabei ist, sich zu verändern. Positives Denken bzw. eine positive Einstellung kann das Schmerzempfinden beeinflussen. Der Sinn der Übung besteht nicht darin, den Schmerz zu unterdrücken, sondern die innere Chemie zu verändern, die den Schmerz überhaupt erst verursacht."
     },
-    "happyMood": {
-        "title": "Happy Mood!",
-        "description": "Diese Übung nutzt und trainiert die Gehirnkontrolle, um Stimmungsschwankungen oder Depressionen zu lindern. Eine vermehrte Sauerstoffversorgung des Gehirns verbessert das Wohlbefinden. In funktionellen MRT-Aufnahmen konnten wir das ganze Gehirn der Probanden tanzen sehen, wenn sie ihre Atemübungen machen. Du kannst diese Übung machen, wann immer dir danach ist. Sie ist besonders wirkungsvoll, wenn du melancholisch, schlecht gelaunt oder deprimiert bist. Erzwinge nichts - fühle es einfach.",
-        "step1": "Setz oder leg dich auf einen bequemen Platz, an dem du nicht gestört wirst.",
-        "step2": "Nimm jedes einzelne Körperteil wahr und entspanne es. Achte bewusst auf alles, was du spürst, siehst und hörst, ohne es zu bewerten. Sei einfach präsent.",
-        "step3": "Hol 20-mal tief Luft. Atme vollständig ein und lass los.",
-        "step4": "Beim letzten Atemzug atmest du tief ein, hälst die Luft an, drückst das Kinn an die Brust, spannst den Beckenboden an und leitest deine Spannung durch den gesamten Oberkörper bis in den Kopf.",
-        "step5": "Nimmst du irgendwo im Körper ein Unbehagen wahr, richtest du deine Aufmerksamkeit darauf und beobachtest es. Spann die Muskeln in dem Bereich an. Halte maximal zehn Sekunden lang den Atem an.",
-        "step6": "Lass mit dem Ausatmen auch alle Spannung los.",
-        "step7": "Wiederhole den gesamten Prozess zwei oder dreimal oder so lange, bis du dich besser fühlst."
+    "powerBreathing": {
+        "title": "Power Breathing",
+        "description": "Diese Übung ist eine Variation der Basis-Atemübung und dient der Steigerung der sportlichen Leistungsfähigkeit. Du kannst den Sauerstoffmangel im Muskelgewebe hinauszögern und dadurch die Entstehung von Milchsäure verschieben, die zu Müdigkeit und Muskelversagen führt. Diese Atemübung setzt Adrenaling und Glukose frei, die dein Körper sofort aufnehmen und eine bessere Leistung erzielen kann.",
+        "step1": "Atme 60-mal ein und entspannt aus.",
+        "step2": "Nach dem letzten tiefen Luftholen hälst du den Atem mindestens 15s lang an (bzw. so lange, wie es sich für dich angenehm anfühlt), drückst quasi den ganzen Körper Richtung Kopf, spannst dabei die Beckenbodenmuskulatur an und lässt dieses Druckgefühl die Wirbelsäule bis zum Scheitel aufsteigen.",
+        "step3": "Atme dann entspannt aus und starte eine neue Runde.",
+        "step4": "Beginne jede Runde im normalen Wim-Hof-Atemrhythmus, erhöhe dann das Tempo und intensiviere sukzessieve deine Atmung. Genau diese Beschleunigung und Intensivierung machen das Power-Breathing aus.",
+        "step5": "Ruhe einige Minuten aus, bevor du mit deiner Ausdauerübung beginnst.",
+        "step6": "Atme währendessen mehr, als du es brauchst und nimm deinen Atem während deiner Ausdauerübung bewusst wahr."
     },
     "settings": {
         "title": "Einstellungen",
         "breathingTime": "Deine Zeit um ein- und auszuatmen"
+    },
+    "warmingUp": {
+        "title": "Aufwärmen",
+        "description": "Wärst du gerne in der Lage, dich jederzeit aufzuwärmen, auch wenn keine äußere Heizquelle vorhanden ist? Mithilfe der folgenden Übung kann Wärme erzeugt werden: Sie aktiviert das braune Fettgewebe, das Energie verbraucht und sie in Form von Wärme abgibt, und bringt die Zwischenrippenmuskeln in Bewegung.",
+        "step1": "Setz dich hin.",
+        "step2": "Atme fünf- bis sechsmal langsam tief ein und lass die Luft ganz von selbst wieder ausströmen.",
+        "step3": "Atme tief und vollständig ein.",
+        "step4": "Entspann dich beim Ausatmen.",
+        "step5": "Atme tief und vollständig ein.",
+        "step6": "Halte kurz - höchstens fünf Sekunden lang - den Atem an.",
+        "step7": "Spanne die oberen Rücken sowie die Brustmuskulatur an, während du den Atem anhältst. Kopf und Kiefer bleiben entspannt.",
+        "step8": "Lass los.",
+        "additionalInfo": "Mit etwas Übung stellt sich bei dir das Gefühl ein, dass vom Hals ausgehend Wärme durch den ganzen Körper fließt. Jeder Mensch ist anders, aber mit der Zeit wirst du spüren, wie Wärme aus deinem Inneren kommt."
+    },
+    "wimHofBreathing": {
+        "title": "Atme wie Wim Hof",
+        "description": "Diese Übung bringt deinen Körper in chemische Balance. Führe die Übung einmal täglich auf leeren Magen durch, da sonst das sympathische und das parasympathische Nervensystem miteinander konkurrieren. Stimme dich auf Achtsamkeit ein, bevor du dich in dieser Atemtechnik übst. Hör auf deinen Körper und lerne aus den physischen und geistigen Signalen, die du während der Übungen empfängst.",
+        "step1": "Nimm in einer ruhigen Umgebung eine Meditationshaltung ein oder lege dich hin, so dass du frei atmen kannst",
+        "step2": "Schließ die Augen und versuch, den Kopf freizubekommen. Verbinde dich mit deiner Atmung, sei dir ihrer bewusst. Atme 40-mal tief durch den Mund oder Nase ein. Fülle Bauch, Brust, deinen ganzen Körper bis unter die Haarwurzeln mit Luft. Erzwinge die Ausatmung nicht. Entspanne dich und atme einfach locker aus. Einatmen, ausatmen.",
+        "step3": "Atemretention: Wenn du am Ende des letzten Atemzuges angelangt bist, atmest du noch einmal tief ein, ganz ohne Anstrengung. Dann lass los und atme aus. Halte den Atem an, bis du den Drang empfindest, neuen Atem zu schöpfen.",
+        "step4": "Recovery-Atem: Sobald der Drang zum Einzuatmen unwiderstehlich wird, holst du einmal tief Luft und hältst sie bis zu 15s lang an.",
+        "step5": "Lass den Atem los, starte eine neue Runde. Tief einatmen, ausatmen. Den Zyklus wiederholst du drei- bis viermal.",
+        "additionalInfo": "Nimm dir im Anschluss an diese Atemübung Zeit, das Gefühl zu genießen. Mit zunehmender Praxis wird die Übung mehr und mehr zu einer richtiggehenden Meditation. Hast du dich erst einmal mit der Basis-Atemübung vertraut gemacht, kannst du sie wie folgt ergänzen: Versuch im zweiten Durchgang beim Recovery-Atem den Atem in den Kopf zu pressen. Das geht, indem du den Beckenboden anspannst und diese Spannung in den Oberkörper und von dort aus bis hoch in den Kopf lenkst. Der Rest des Körpers bleibt ganz entspannt. Im Kopf sollte ein gewisser Druck spürbar sein. Beim Ausatmen lösst du alles los und enspannst."
     }
 }
