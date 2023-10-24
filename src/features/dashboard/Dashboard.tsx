@@ -68,7 +68,8 @@ export const Dashboard: React.FC = () => {
         {...exerciseProps}
         // {...debugExerciseProps}
       />,
-      <InfoArea {...SimplifiedWimHofBreathingInfo} />
+      <InfoArea {...WimHofBreathingInfo} />
+      // <InfoArea {...SimplifiedWimHofBreathingInfo} />
     ),
     buildMenuItemWithDetailScreen(texts.painSoothing.title),
     buildMenuItemWithDetailScreen(texts.happyMood.title),

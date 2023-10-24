@@ -1,5 +1,4 @@
-import { Dashboard } from "./features/dashboard/Dashboard";
+import { RouterProvider } from "react-router-dom";
+import { AppRouter } from "./AppRouter";
 
-export const App = () => {
-  return <Dashboard />;
-};
+export const App = () => <RouterProvider router={AppRouter} />;
