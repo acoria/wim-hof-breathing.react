@@ -10,7 +10,7 @@ export const Menu: React.FC<IMenuProps> = (props) => {
         <ScreenTitle
           key={index}
           title={menuItem.title}
-          onClick={() => props.onMenuItemSelected(menuItem.component)}
+          onClick={() => props.onMenuItemSelected(menuItem.path)}
           className={styles.menuItem}
         />
       );

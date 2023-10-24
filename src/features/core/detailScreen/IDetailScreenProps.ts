@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 
 export interface IDetailScreenProps {
   children?: ReactNode | ReactNode[];
-  infoArea?: ReactNode;
-  onHomeButtonClick?: () => void;
+  infoPopupContent?: ReactNode;
   title: string;
 }
