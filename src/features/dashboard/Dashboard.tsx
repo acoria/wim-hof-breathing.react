@@ -8,9 +8,6 @@ export const Dashboard: React.FC = () => {
 
   const menuItems: IMenuItem[] = [
     { title: texts.wimHofBreathing.title, path: "/wimHofBreathing" },
-    { title: texts.painSoothing.title, path: "/painSoothing" },
-    { title: texts.happyMood.title, path: "/happyMood" },
-    { title: texts.warmingUp.title, path: "/warmingUp" },
     {
       title: texts.interoceptionBreathing.title,
       path: "/interoceptionBreathing",
@@ -19,6 +16,9 @@ export const Dashboard: React.FC = () => {
       title: texts.interoceptionHeartBeat.title,
       path: "/interoceptionHeartBeat",
     },
+    { title: texts.warmingUp.title, path: "/warmingUp" },
+    { title: texts.happyMood.title, path: "/happyMood" },
+    { title: texts.painSoothing.title, path: "/painSoothing" },
     { title: texts.settings.title, path: "/settings" },
   ];
 

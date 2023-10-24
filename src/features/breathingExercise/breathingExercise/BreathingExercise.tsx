@@ -9,12 +9,11 @@ import { IBreathingExerciseProps } from "./IBreathingExerciseProps";
 import { useBreathingTimer } from "./hooks/useBreathingTimer";
 
 export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
-  const NUMBER_FINISHED_EXERCISES = "NUMBER_FINISHED_EXERCISES";
   const [
     numberOfFinishedExercises,
     updateNumberOfFinishedExercises,
     updateNumberOfFinishedExercisesUsingPreviousValue,
-  ] = useLocalStorage(NUMBER_FINISHED_EXERCISES, 0);
+  ] = useLocalStorage(props.localStorageIdForNumberOfFinishedExercises, 0);
   const [showBreathHoldCounter, setShowBreathHoldCounter] = useState(false);
 
   const {
@@ -59,7 +58,7 @@ export const BreathingExercise: React.FC<IBreathingExerciseProps> = (props) => {
     <>
       <div className={styles.breathingExerciseCounter}>
         <BreathingExerciseCounter
-          maxNumberOfBreathingExercises={4}
+          maxNumberOfBreathingExercises={props.maxNumberOfBreathingExercises}
           numberOfBreathingExercises={numberOfFinishedExercises}
           onReset={() =>
             playClickWrapper(() => updateNumberOfFinishedExercises(0))

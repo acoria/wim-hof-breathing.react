@@ -6,12 +6,6 @@ import { WimHofBreathingInfo } from "../features/exercises/WimHofBreathingInfo";
 import { useBreathDurationLocalStorage } from "../features/settings/breathDurationSetting/useBreathDurationLocalStorage";
 import { texts } from "../i18n/texts";
 
-const debugExerciseProps: IBreathingExerciseProps = {
-  breathDurationInMillis: 1000,
-  numberOfBreaths: 2,
-  startDelayInMillis: 1000,
-};
-
 export const WimHofBreathingPage = () => {
   const [breathDuration] = useBreathDurationLocalStorage();
 
@@ -19,6 +13,15 @@ export const WimHofBreathingPage = () => {
     breathDurationInMillis: breathDuration,
     numberOfBreaths: 40,
     startDelayInMillis: 1000,
+    maxNumberOfBreathingExercises: 4,
+    localStorageIdForNumberOfFinishedExercises:
+      "NUMBER_FINISHED_EXERCISES_WIM_HOF_BREATHING",
+  };
+
+  const debugExerciseProps: IBreathingExerciseProps = {
+    ...exerciseProps,
+    breathDurationInMillis: 1000,
+    numberOfBreaths: 2,
   };
 
   return (
