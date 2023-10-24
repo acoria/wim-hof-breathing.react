@@ -1,20 +1,19 @@
 import { ReactNode, useState } from "react";
+import { texts } from "../../i18n/texts";
 import { BreathingExercise } from "../breathingExercise/breathingExercise/BreathingExercise";
+import { IBreathingExerciseProps } from "../breathingExercise/breathingExercise/IBreathingExerciseProps";
+import { DetailScreen } from "../core/detailScreen/DetailScreen";
+import { IInfoAreaProps } from "../core/infoArea/IInfoAreaProps";
+import { InfoArea } from "../core/infoArea/InfoArea";
+import { InfoDetailScreen } from "../core/infoDetailScreen/InfoDetailScreen";
 import { IMenuItem } from "../core/menu/IMenuItem";
 import { Menu } from "../core/menu/Menu";
-import { IBreathingExerciseProps } from "../breathingExercise/breathingExercise/IBreathingExerciseProps";
-import { Settings } from "../settings/settings/Settings";
-import { useBreathDurationLocalStorage } from "../settings/breathDurationSetting/useBreathDurationLocalStorage";
-import { DetailScreen } from "../core/detailScreen/DetailScreen";
-import { InfoArea } from "../core/infoArea/InfoArea";
-import { SimplifiedWimHofBreathingInfo } from "../exercises/SimplifiedWimHofBreathingInfo";
-import { texts } from "../../i18n/texts";
-import { WarmingUpInfo } from "../exercises/WarmingUpInfo";
-import { InfoDetailScreen } from "../core/infoDetailScreen/InfoDetailScreen";
-import { IInfoAreaProps } from "../core/infoArea/IInfoAreaProps";
-import { WimHofBreathingInfo } from "../exercises/WimHofBreathingInfo";
 import { InteroceptionBreathingInfo } from "../exercises/InteroceptionBreathingInfo";
 import { InteroceptionHeartBeatInfo } from "../exercises/InteroceptionHeartBeatInfo";
+import { WarmingUpInfo } from "../exercises/WarmingUpInfo";
+import { WimHofBreathingInfo } from "../exercises/WimHofBreathingInfo";
+import { useBreathDurationLocalStorage } from "../settings/breathDurationSetting/useBreathDurationLocalStorage";
+import { Settings } from "../settings/settings/Settings";
 
 const debugExerciseProps: IBreathingExerciseProps = {
   breathDurationInMillis: 1000,
@@ -69,7 +68,6 @@ export const Dashboard: React.FC = () => {
         // {...debugExerciseProps}
       />,
       <InfoArea {...WimHofBreathingInfo} />
-      // <InfoArea {...SimplifiedWimHofBreathingInfo} />
     ),
     buildMenuItemWithDetailScreen(texts.painSoothing.title),
     buildMenuItemWithDetailScreen(texts.happyMood.title),

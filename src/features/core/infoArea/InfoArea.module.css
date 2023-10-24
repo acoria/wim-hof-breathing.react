@@ -1,6 +1,9 @@
 .infoArea {
-  padding-bottom: 1rem;
-  font-size: small;
+  font-size: 0.7rem;
+}
+
+.infoArea p {
+  margin: 0.5rem 0;
 }
 
 .steps {
@@ -8,4 +11,5 @@
   grid-template-columns: 1rem auto;
   grid-row-gap: 0.5rem;
   margin-left: 0.5rem;
+  font-weight: 500;
 }

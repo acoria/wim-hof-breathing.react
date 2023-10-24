@@ -35,8 +35,8 @@
 }
 
 .infoDetails {
-  width: calc(100vw - 8rem);
+  width: calc(100vw - 4rem);
   background-color: var(--accent-translucent);
   color: var(--secondary);
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
