@@ -1,0 +1,50 @@
+Anforderungen Wim Hof Breathing App:
+Einstieg:
+- zu Beginn können die Anzahl Durchläufe bestimmt werden (Togglebutton) 2/3/4
+- die geschätzte Zeit wird angezeigt
+# "Startbutton" zum Übung starten
+- die Länge der Atemzüge kann gecustomized werden (Slider)
+- es kann getoggelt werden, ob man die Übungen mit oder ohne Wim Hofs Tipps durchführen möchte
+
+
+Übung:
+# zwei unterschiedliche Töne, die wie ein Metronom Ein- und Ausatmen unterstützen
+# die letzten drei Atemzüge (ab 38. Atemzug) wird durch ein anderes Geräusch angezeigt, dass die letzten Atemzüge kommen
+# Nach den Atemzügen pausiert die App
+# der komplette Screen reagiert auf Touch, um die Übung neu zu beginnen
+# die Anzahl der Atemzüge wird hochzählt und angezeigt
+# eine Animation zeigt Aus- und Einatmen an
+# ein Atemzug dauert ca. 1.6s
+
+Audio aus Video:
+	- Ansage "Runde X"
+	- worauf man sich konzentrieren soll
+	- wie man atmen soll? -> Einführung (evtl. 3 Toggle: keine/mit Tipps/Einführung)
+
+Verbesserungen/Bugfixes:
+#Feedback, ob das Pausieren des Atem-Timers geklappt hat
+#Gong als letzten Sound
+#Delay-Timer wird nicht gestoppt
+#Anzahl Durchläufe können nicht mehr zurückgesetzt werden
+- InfoArea is shown to the left when it is not visible
+
+Erweiterungen:
+#Settings: - die Länge der Atemzüge kann gecustomized werden (Slider) -> ca. max. 1.8 - 2.2s (0.2s Schritte)
+- Local Storage anpassen: Objekt statt Wert für durchgeführte Übungen -> jede Übung hat ihren eigenen Storage
+#i18n für Texte
+#Routing zu den einzelnen Seiten
+
+- Zusätzliche Erklärungen/Modi pflegen:
+	- Modi:
+		#normal (S.84)
+		#aufwärmen (S.62)
+		#Power-Breathing für mehr Ausdauer (S.187) - Timer~
+		#Stimmungsaufhellung (S. 241) - Timer
+		#Schmerzbewältigung (S. 207) - Timer
+		- Kater heilen (S.97 / 25min atmen)
+		#Interozeption:
+			#Atmung (S. 252)
+			#Herzschlag (S. 256)
+	- Erklärungen:
+		- Die drei Säulen (S.133)
+		- Eisbaden (S. 224)
